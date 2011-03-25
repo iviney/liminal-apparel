@@ -43,7 +43,7 @@ namespace :sqlite3 do
     db_options = {
       "adapter"  => "sqlite3",
       "database" => "#{shared_database_path}/production.sqlite3",
-      "timeout"  => "5000"
+      "timeout"  => 5000
     }
     config_options = { "production" => db_options }.to_yaml
     put config_options, "#{shared_config_path}/sqlite_config.yml"
