@@ -10,7 +10,7 @@ set :use_sudo, false
 set :deploy_to, "/var/www/rails/liminal-apparel"
 set :deploy_via, :remote_cache
 
-host = "richard.viney.net.nz"
+host = "test.store.liminal.org.nz"
 
 role :web, host
 role :app, host
