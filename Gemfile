@@ -7,4 +7,4 @@ gem 'sqlite3'
 # Deploy with Capistrano
 gem 'capistrano'
 
-gem 'spree'
+gem 'spree', '0.50.0'
