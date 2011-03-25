@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101219201531) do
+ActiveRecord::Schema.define(:version => 20110314192118) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -165,6 +165,7 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
     t.string   "presentation", :limit => 100
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position",                    :default => 0, :null => false
   end
 
   create_table "option_types_prototypes", :id => false, :force => true do |t|
@@ -437,6 +438,7 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
     t.datetime "updated_at"
     t.string   "previous_state"
     t.string   "stateful_type"
+    t.string   "next_state"
   end
 
   create_table "states", :force => true do |t|
@@ -546,6 +548,7 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
     t.boolean  "is_master",                                   :default => false
     t.integer  "count_on_hand",                               :default => 0,     :null => false
     t.decimal  "cost_price",    :precision => 8, :scale => 2
+    t.integer  "position"
   end
 
   add_index "variants", ["product_id"], :name => "index_variants_on_product_id"
