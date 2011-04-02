@@ -1,0 +1,576 @@
+body {
+  background-image: url('/images/T-shirt-background.jpg');  
+}
+
+.liminal {
+  width:803px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#liminal-header {
+  background-color: rgb(65,65,65);
+  position: relative;
+}
+
+#liminal-header img.logo {
+  height: 80px;
+/*  width: 166px; */
+}
+
+#liminal-header li {
+  list-style-type: none;  
+  font-family: Tahoma, sans-serif;
+  font-size: 11pt;
+  font-weight: normal;
+}
+
+a {color: white;}
+
+#liminal-header ul {
+  margin: 0;
+}
+
+#liminal-header ul.links {
+  position: absolute;
+  top: 14px;
+  right: 40px;
+}
+
+#liminal-header ul.links li {
+  float:right;
+  color: rgb(200,200,200);
+  text-align: right;
+}
+
+#liminal-header ul.links a {
+  color: rgb(200,200,200);
+}
+
+#liminal-header ul.links img {
+  vertical-align: -20%;
+  height: 24px;
+}
+
+#liminal-header div.menu {
+  position: absolute;
+  bottom: 0%;
+  right: 30px;
+  margin: 0px;
+  overflow:visible;
+}
+#liminal-header div.menu > ul > li {
+  margin-left: 55px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+#liminal-content {
+  min-height: 450px;
+  background-color: white;
+  padding-left: 40px;
+  padding-bottom: 28px;
+}
+
+#liminal-content #banner img {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+   #myGallery{ /* see http://jquery-howto.blogspot.com/2009/05/replacing-images-at-time-intervals.html */
+      position:relative;
+      width:723px; /* Set your image width */
+      height: 282px; /* Set your image height  258+12+12*/
+    }
+    #myGallery img{
+      display:none;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+    #myGallery img.active{
+      display:block;
+    }
+
+#liminal-content #bottom-row {
+  height: 170px;
+  overflow: hidden;
+}
+
+#liminal-content #categories {
+  height: 170px;
+  width: 723px;
+}
+
+#liminal-content .category {
+  margin-right: 12px;
+  position: relative;
+  width: 170px;
+  height: 170px;
+  float: left;
+}
+
+#liminal-content .category .label {
+  position: absolute;
+  left: 0px;
+  bottom: 12px;
+  background-color: rgb(50,50,50);
+  color: white;
+  font-family: Tahoma, sans-serif;
+  font-size: 10pt;
+  padding: 8px;
+}
+
+#liminal-content .category img.unselected {
+  opacity: 0.5;
+}
+
+#liminal-footer {
+  height: 70px;
+  background-color: rgb(50,50,50);
+}
+
+#banner-small {
+  padding-top: 12px;
+  margin-bottom: 10px;
+}
+
+#page-pics {
+  width: 170px;
+  float: left;
+}
+
+#page-pics img {
+  margin-bottom: 12px;
+  width: 170px;
+}
+
+#page-body {
+  width: 368px;
+  float: left;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-left: 6px;
+}
+
+#page-body th {
+  width:20%;
+  height: 24px;
+  background-color: #414141;
+  border-right: 2px solid white;
+  /*border-top: none;*/
+  font-size: 7pt;
+  text-align: center;
+  list-style: none;
+  line-height: 95%;
+  vertical-align: middle; display: table-cell;
+}
+
+#page-body th.inactive a, #page-body th.inactive a:visited {
+  text-decoration: none;
+  color: white;  
+}
+
+#page-body th.inactive a:hover {
+  color:#BDBDBD;
+}
+
+#page-body th.active {
+  color: white;
+  background-color: #008040; /* green */
+}
+
+#page-body th.active a {
+  text-decoration: none;
+}
+
+.liminal h1 {
+  font-family: Tahoma, sans-serif;
+  font-size: 14pt;
+  font-weight: normal;
+  color: rgb(147,147,147);
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+}
+
+.liminal h2 {
+  font-family: Tahoma, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  color: rgb(147,147,147);
+  padding-top: 4px;
+  /* padding-left: 5px;*/
+  padding-bottom: 4px;
+  margin-bottom: 0px;
+}
+
+.liminal h3 {
+  font-family: Tahoma, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  color: rgb(65,65,65);
+  /* padding-left: 8px; */
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 0px;
+}
+
+.liminal p, .liminal li {
+  font-family: Tahoma, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  color: rgb(50,50,50);
+  margin-bottom: 6px;
+}
+
+.tweet li {
+  font-family: Tahoma, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  color: white;
+  margin-bottom: 6px;
+}
+
+
+#product-info li, #product-info ul {
+  margin-bottom: 0px;
+}
+
+table.table-5-column, table.table-6-column {table-layout: fixed;}
+.table-2-column td {width: 50%;}
+.table-5-column td {width: 20%;}
+.table-6-column td {width: 16.67%;}
+
+#page-body .table-2-column tr {
+  line-height: 1;
+}
+
+#page-body table.table-2-column td, #page-body table.table-2-column td a {
+  font-family: Tahoma, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  color: #414141;
+  background-color: white;
+  text-align:left;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+#page-body table.table-2-column td a, #page-body a {
+  color: #008040;
+  text-decoration: none;
+}
+
+#page-body table.table-2-column td a:hover, #page-body a:hover {
+  color: #008040; /* green */
+  font-weight: bold;
+}
+
+#page-body td, #page-body td a {
+  font-family: Tahoma, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  background-color: #949494;
+  color: white;
+  height: 20px;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  vertical-align: middle; display: table-cell;
+}
+
+#retailers td, #retailers td a {
+  height: 12px;
+}
+
+#twitter-column {
+  float: left;
+  /* margin-right: 20px; */
+  width: 170px;
+}
+
+#main-T-shirt-area #product-info {
+  width: 296px; /* 723-340-11-65-11 */
+  float: left;
+  height: 341px; /* 4 x (65+4) + 65 */
+  position: relative;
+}
+
+.reversed {
+  background-color: rgb(50,50,50);
+  color: white;
+  font-family: Tahoma, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  padding-bottom: 0px;
+  height: 24px;
+  line-height: 1;
+}
+
+.reversed img {
+  vertical-align: text-bottom;
+}
+
+#main-T-shirt-area .footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+#main-T-shirt-area .caption {
+  padding-top: 6px;
+  font-size: 14px;
+}
+
+#main-T-shirt-area #swatches {
+  margin-left: 11px;
+  margin-right: 11px;
+  float: left;
+  width: 65px;
+  line-height: 9px; /* for IE7 bug */
+}
+
+#main-T-shirt-area .swatch {
+  width: 65px;
+  height: 65px;
+  margin-bottom: 4px;
+}
+
+img.swatch {
+  width: 65px;
+  height: 65px;
+}
+
+#main-T-shirt-area #main-image {
+  width: 340px;
+  height: 341px;
+  float: right;
+  position: relative;
+  margin-right: 40px;
+}
+
+#main-image img {width: 100%}
+
+#main-T-shirt-area img.thumbnail {
+  width: 16px;
+  border: 1px solid white;
+  margin-right: 12px;
+  float: right;
+}
+
+#T-shirt-order {
+  margin-right: 40px;
+}
+
+#T-shirt-order button { /* undo all the stuff for button in screen.css! */
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  background: none !important;
+  background-image: none !important;
+  border-style: none;
+  border-width: 0px !important;
+  border-color: inherit !important;
+  -moz-outline-radius: 0px;
+  color: inherit;
+  display: inherit;
+  line-height: inherit;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  text-transform: none;
+}
+
+button .reversed img {
+  height: 20px;
+}
+
+#option-matrix {
+  width: 723px;
+}
+
+#option-matrix th, #T-shirt-order td {
+  padding: 0px;
+  width: 120px;
+  border: none;
+}
+
+#option-matrix .cell {
+  position: relative;
+  height: 48px;
+}
+
+#option-matrix .cell img {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 30px;
+  height: 30px;
+}
+
+#option-matrix th .cell p {
+  position: absolute;
+  bottom: 8px;
+  left: 47px;
+  margin: 0px;
+  font-family: Tahoma;
+  font-size: 9pt;
+  font-weight: bold;
+  color: rgb(65,65,65);
+}
+
+#option-matrix .input_caption {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 25%;
+  text-align: right;
+  font-family: Tahoma, sans-serif;
+  font-size: 10pt;
+  color: rgb(65,65,65);
+  margin: 0px 0px 8px 0px;
+}
+
+#option-matrix input {
+  width: 70%;
+  height: 30px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  text-align: center;
+  background-color: rgb(200,200,200);
+  border: none;
+  float: right;
+}
+
+#screen-printing-info img {
+  width: 30px;
+  height: 30px;
+  display: inline;
+  border: 1px solid black;
+  vertical-align: middle;
+}
+
+#screen-printing-info p {
+  font-family: Tahoma, sans-serif;
+  font-size: 9pt;
+  font-weight: normal;
+  color: rgb(65,65,65);
+  line-height: 30px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+#shopping-cart {
+  width:540px;
+  float: left;
+  margin-left: 12px;
+}
+
+table#cart-detail {
+  width: 540px;
+}
+
+#cart-detail th.deletion {width: 8%;}
+#cart-detail th.item {width: 52%;}
+#cart-detail th.price {width: 10%;}
+#cart-detail th.qty {width: 20%;}
+#cart-detail th.total {width: 10%;}
+  
+#cart-detail th {
+  background-color: rgb(200,200,200);
+  font-family: Tahoma, sans-serif;
+  font-size: 7pt;
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  border: 1px solid black;
+}
+
+#cart-detail td {
+  background-color: white;
+  font-family: Tahoma, sans-serif;
+  font-size: 7pt;
+  font-weight: normal;
+  text-align: left;
+  color: black;
+  border: 1px solid black;
+}
+
+#cart-detail tr {
+  height: 27px;
+}
+
+#cart-detail td.deletion {
+  text-align: center;
+}
+
+#cart-detail td img {
+  width: 16px;
+}
+
+#cart-detail td a {
+  color: black;
+}
+
+#cart-detail td input {
+  text-align: center;
+  background-color: rgb(200,200,200);
+  border: none;
+}
+
+#cart-detail td {
+  vertical-align: middle;
+}
+
+#cart-detail dt {
+  vertical-align: middle;
+}
+
+#cart-detail select {
+  border:none;
+  background-color: rgb(200,200,200);
+  font-family: Tahoma, sans-serif;
+  font-size: 7pt;
+  font-weight: normal;
+  color: black;
+}
+
+#cart-detail #delivery dt {
+  font-weight: normal;
+}
+
+/*Based on http://www.jankoatwarpspeed.com/post/2009/07/28/reinventing-drop-down-with-css-jquery.aspx*/
+        .dropdown dd, .dropdown dt, .dropdown ul { margin:0px; padding:0px; }
+        .dropdown dd { position:relative;}
+        .dropdown a, .dropdown a:visited { color:rgb(230,230,230); text-decoration:none; outline:none;}
+        .dropdown a:hover { color:#5d4617;}
+        .dropdown dt a:hover { color:#5d4617; border: 1px solid #d0c9af;}
+        .dropdown dt a {background:rgb(230,230,230) url('/images/arrow.png') no-repeat scroll right center; display:block; padding-right:20px;
+                        border:1px solid #d4ca9a; width:240px;}
+        .dropdown dt a span {cursor:pointer; display:block; padding:2px;}
+        .dropdown dd ul { background:#E6E6E6 none repeat scroll 0 0; border:1px solid #d4ca9a; color:#C5C0B0; display:none;
+                          left:0px; padding:5px 0px; position:absolute; top:2px; width:auto; min-width:240px; list-style:none;}
+        .dropdown span.value { display:none;}
+        .dropdown dd ul li {font-size: inherit;}
+        .dropdown dd ul li a { padding:3px 5px 3px 5px; display:block;}
+        .dropdown dd ul li a:hover { background-color:rgb(200,200,200);}
+        dl.dropdown {margin:0px;}
+
+#shopping-cart .reversed {
+  margin-left: 20px;
+  font-size: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 4px;
+  padding-bottom: 0px;
+  height: 16px;
+
+}
