@@ -5,49 +5,91 @@
   <%= render :partial => 'shared/head'%>
   <%= render :partial => 'shared/head_menu'%>
 <% end %>
+
+<%= yield :extra_head_stuff %>
+
 </head>
+
 <%
 if @body_class.nil?
-  if content_for?(:sidebar)
+  if @content_for_sidebar
     @body_class = 'two-col'
   else
     @body_class = 'one-col'
   end
 end
- %>
-<body class="<%= @body_class %>" id="<%= @body_id %>">
-  <div id="header" class="container_bg">
-    <div class="container">
-    <div id="login-bar">
-      <ul id="nav-bar">
-        <%= render 'shared/nav_bar' %>
+%>
+
+<body class="<%= @not_body_class %>"<%= %( id="#{@body_id}") if @body_id %>>
+  <div class="liminal">
+    <div id="liminal-header">
+      <img class="logo" src="/images/liminal-apparel.jpg" alt=""/>
+
+      <ul class="links">
+        <%# this bit is based on _login_bar.html.erb %>
+        <li>
+          <% if current_user -%>
+            <%# <li><%= link_to t('my_account'), user_path(current_user) %>
+            <%#  </li>  %>
+            <%= link_to t('logout'), logout_path %>
+          <% else %>
+              <a href="/login" alt=""><img src="/images/T-shirt-logo.png" alt=""/>&nbsp;Log In</a>
+          <% end -%>
+          &nbsp;&nbsp;
+          <a href="<%= cart_path %>"><img src="/images/cart.png" alt="">&nbsp;Shopping Cart</a>
+        </li>
       </ul>
-    </div>
-  <%= logo %>
-  </div>
-  </div>
 
-  <div id="wrapper" class="container">
-    <% if content_for?(:sidebar) %>
-    <div id="sidebar">
-      <%= hook :sidebar do %>
-        <%= yield :sidebar %>
-      <% end %>
-    </div>
-    <% end %>
+      <!--See http://www.dillerdesign.com/experiment/DD_roundies/ for IE support of rounded borders.-->
+      <!--Or http://www.bestinclass.com/blog/2008/css3-border-radius-rounded-corners-ie/ -->
 
-    <div id="content">
-      <%= breadcrumbs(@taxon) if @taxon %>
-      <% if flash.notice %>
-      <div class="flash notice"><%= flash.notice %></div>
-      <% end %>
-      <% if flash[:error] %>
-      <div class="flash errors"><%= flash[:error] %></div>
-      <% end %>
+      <div id="menu_bar" class="menu">
+        <ul class="sf-menu">
+          <li><a href="/">SHOP</a>
+            <ul>
+              <li><a href="#">Bags</a></li>
+              <li><a href="/products/freeset-t-shirt">Women's T-shirts</a></li>
+              <li><a href="#">Men's T-shirts</a></li>
+              <li><a class="spaced" href="/shop/pricing">Pricing &amp; Delivery</a></li>
+              <li><a href="/shop/size">Size &amp; garment info</a></li>
+              <li><a href="/shop/returns">Returns &amp; refunds</a></li>
+              <li><a href="/shop/terms">Terms &amp; conditions</a></li>
+              <li><a href="/shop/retail">Retail stockists</a></li>
+            </ul>
+          </li>
+          <li><a href="#">WHOLESALE</a>
+            <ul>
+              <li><a href="/wholesale/t_shirts">T-shirts</a></li>
+              <li><a href="/wholesale/custom_bags">Custom bags</a></li>
+              <li><a href="/wholesale/re_selling_bags">Re-selling bags</a></li>
+              <li><a href="/wholesale/screen_printing">Screen printing</a></li>
+            </ul>
+          </li>
+          <li><a href="#">COMMUNITY</a>
+            <ul>
+              <li><a href="/community/our_story">Our story</a></li>
+              <li><a href="/community/freeset">Freeset</a></li>
+              <li><a href="/community/fair_trade">Fair trade</a></li>
+              <li><a href="/community/organic">Organic</a></li>
+              <li><a href="/community/press">Press</a></li>
+              <li><a href="/community/retail">Retail stockists</a></li>
+            </ul>
+          </li>
+          <li><a href="http://liminalapparel.wordpress.com/" target=”_blank>BLOG</a></li>
+          <li><a href="/shop/contact">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="liminal-content">
       <%= yield %>
+
+      <div class="clear"></div>
     </div>
-    <%= render :partial => 'shared/footer'%>
+
+    <div id="liminal-footer">
+    </div>
   </div>
+
 
 </body>
-</html>
