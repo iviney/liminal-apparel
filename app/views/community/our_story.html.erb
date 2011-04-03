@@ -1,0 +1,34 @@
+<div id="banner-small">
+  <img src="/images/banner-small.jpg" />
+</div>
+
+<div id="page-pics">
+  <img src="/images/our_story-pic1.jpg" />
+  <img src="/images/our_story-pic2.jpg" />
+</div>
+
+<div id="page-body">
+  <% @active_item = 1 %>
+  <%= render :partial => 'shared/page_menu_community'%>
+  
+  <h1>OUR STORY</h1>  
+  <p>
+  Liminal Apparel is about providing fair trade organic T&#8209;shirts and bags
+  for people to apply their ideas too. We&#8217;ve chosen to stock only fair trade
+  organic products, which makes us part of a movement working towards
+  better ways of global trading.
+  </p>
+  <p>
+  On top of this, we invest our profits into the communities that produce
+  our products. That money is used to help our suppliers develop their
+  communities. It&#8217;s not the total answer to the huge issues of poverty,
+  but is part of the solution.
+  </p>
+  <p>
+  So every time you buy from Liminal Apparel you not only get a great
+  T&#8209;shirt or bag, you also join us as part of the story to help our suppliers
+  get a fair crack at life. That seems fair to us.
+  </p>
+</div>
+
+<%= render :partial => 'shared/twitter_column'%>

@@ -1,0 +1,20 @@
+<div id="banner-small">
+  <img src="/images/banner-small.jpg" />
+</div>
+
+<div id="page-pics">
+  <img src="/images/press-pic1.jpg" />
+  <img src="/images/press-pic2.jpg" />
+</div>
+
+<div id="page-body">
+  <% @active_item = 5 %>
+  <%= render :partial => 'shared/page_menu_community'%>
+  
+  <h1>PRESS</h1>  
+  <p>
+  Insert text here...
+  </p>
+</div>
+
+<%= render :partial => 'shared/twitter_column'%>

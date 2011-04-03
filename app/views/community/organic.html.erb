@@ -1,0 +1,26 @@
+<div id="banner-small">
+  <img src="/images/banner-small.jpg" />
+</div>
+
+<div id="page-pics">
+  <img src="/images/organic-pic1.jpg" />
+  <img src="/images/organic-pic2.jpg" />
+</div>
+
+<div id="page-body">
+  <% @active_item = 4 %>
+  <%= render :partial => 'shared/page_menu_community'%>
+  
+  <h1>ORGANIC</h1>  
+  <p>
+  Our raw materials are sourced from suppliers who use sustainable
+  farming and production processes. This means they avoid the use of
+  chemicals, hormones and preservatives which damage the Earth and
+  are harmful to people. Pesticides and fertilizers used to grow non-organic
+  cotton have an extraordinary impact on the Earth and on those who work
+  it. That&#8217;s why Freeset sources 100% Ecocert organic cotton for T&#8209;shirts.
+  The cotton is also dyed using a 100% organic process.
+  </p>
+</div>
+
+<%= render :partial => 'shared/twitter_column'%>

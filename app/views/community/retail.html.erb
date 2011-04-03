@@ -1,0 +1,17 @@
+<div id="banner-small">
+  <img src="/images/banner-small.jpg" />
+</div>
+
+<div id="page-pics">
+  <img src="/images/retail-pic1.jpg" />
+  <img src="/images/retail-pic2.jpg" />
+</div>
+
+<div id="page-body">
+  <% @active_item = 6 %>
+  <%= render :partial => 'shared/page_menu_community'%>
+  
+  <%= render :partial => 'shared/retail_stockists'%>
+</div>
+
+<%= render :partial => 'shared/twitter_column'%>
