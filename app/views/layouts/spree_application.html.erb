@@ -10,17 +10,7 @@
 
 </head>
 
-<%
-if @body_class.nil?
-  if @content_for_sidebar
-    @body_class = 'two-col'
-  else
-    @body_class = 'one-col'
-  end
-end
-%>
-
-<body class="<%= @not_body_class %>"<%= %( id="#{@body_id}") if @body_id %>>
+<body >
   <div class="liminal">
     <div id="liminal-header">
       <img class="logo" src="/images/liminal-apparel.jpg" alt=""/>

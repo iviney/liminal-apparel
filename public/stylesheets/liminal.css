@@ -1,5 +1,6 @@
 body {
-  background-image: url('/images/T-shirt-background.jpg');  
+  background-image: url('/images/T-shirt-background.jpg');
+  background-repeat: repeat;
 }
 
 .liminal {
