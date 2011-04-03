@@ -1,0 +1,45 @@
+<div id="banner-small">
+  <img src="/images/banner-small.jpg" />
+</div>
+
+<div id="page-pics">
+  <img src="/images/size-pic1.jpg" />
+  <img src="/images/size-pic2.jpg" />
+</div>
+
+<div id="page-body">
+  <% @active_item = 2 %>
+  <%= render :partial => 'shared/page_menu_shop'%>
+  
+  <h1>SIZE & GARMENT INFO</h1>
+  
+  <h3>WOMEN'S MEASUREMENTS (CM)</h3>
+  <p></p>
+  
+  <table class="table-5-column" >
+    <tr>
+      <td><b>Size<br/>Chest<br/>Waist</b></td>
+      <td><b>S</b><br/>76-81<br/>66-71</td>
+      <td><b>M</b><br/>81-86<br/>71-76</td>
+      <td><b>L</b><br/>91-96<br/>81-86</td>
+      <td><b>XL</b><br/>101-107<br/>91-97</td>
+    </tr>
+  </table>
+
+  <h3>MEN'S MEASUREMENTS (CM)</h3>
+  <p></p>
+  
+  <table class="table-6-column" >
+    <tr>
+      <td><b>Size<br/>Chest<br/>Waist</b></td>
+      <td><b>S</b><br/>86-91<br/>79-84</td>
+      <td><b>M</b><br/>97-102<br/>89-94</td>
+      <td><b>L</b><br/>107-112<br/>99-104</td>
+      <td><b>XL</b><br/>117-122<br/>109-114</td>
+      <td><b>XXL</b><br/>122-127<br/>114-119</td>
+    </tr>
+  </table>
+
+</div>
+
+<%= render :partial => 'shared/twitter_column'%>

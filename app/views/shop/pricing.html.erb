@@ -1,0 +1,17 @@
+<div id="banner-small">
+  <img src="/images/banner-small.jpg" />
+</div>
+
+<div id="page-pics">
+  <img src="/images/size-pic1.jpg" />
+  <img src="/images/size-pic2.jpg" />
+</div>
+
+<div id="page-body">
+  <% @active_item = 1 %>
+  <%= render :partial => 'shared/page_menu_shop'%>
+  
+  <h1>PRICING & DELIVERY</h1>
+</div>
+
+<%= render :partial => 'shared/twitter_column'%>
