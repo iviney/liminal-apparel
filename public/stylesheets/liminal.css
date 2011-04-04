@@ -481,8 +481,8 @@ table#cart-detail {
 
 #cart-detail th.deletion {width: 8%;}
 #cart-detail th.item {width: 52%;}
-#cart-detail th.price {width: 10%;}
-#cart-detail th.qty {width: 20%;}
+#cart-detail th.price {width: 14%;}
+#cart-detail th.qty {width: 16%;}
 #cart-detail th.total {width: 10%;}
   
 #cart-detail th {
@@ -522,6 +522,10 @@ table#cart-detail {
 }
 
 #cart-detail td input {
+  background-color: white;
+  font-family: Tahoma, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
   text-align: center;
   background-color: rgb(200,200,200);
   border: none;
