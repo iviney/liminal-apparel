@@ -1,0 +1,122 @@
+<% # Copied from \spree-0.11.0\vendor\extensions\theme_default\app\views\orders\edit.html.erb and edited
+   # Then edited some more based on spree_core-0.50.0\app\views\orders\edit.html.erb
+%>
+<!--Based on http://www.jankoatwarpspeed.com/post/2009/07/28/reinventing-drop-down-with-css-jquery.aspx-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+                        
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#delivery-price").html($("#sample").find("dt a span.value").html());
+                $("#GST").html($("#sample").find("dt a span.GST-value").html());
+                $("#Grand-total").html($("#sample").find("dt a span.total-value").html());
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+        });
+    </script>
+
+<div id="banner-small">
+  <img src="/images/banner-small.jpg" />
+</div>
+
+<div id="page-pics">
+  <img src="/images/cart-pic1.jpg" />
+  <img src="/images/cart-pic2.jpg" />
+</div>
+
+<div id="shopping-cart">
+  
+  <% @body_id = 'cart' %>
+  
+  <h2>SHOPPING CART</h2>
+  <h3>Do you have everything you need?<br /><br /><h3>
+
+  <%# form_for(@order, :url => object_url, :html => { :method => :put, :id => 'updatecart' }) do |order_form| %>
+  <%= form_for(@order, :url => update_cart_path, :html=>{:id=>'updatecart'}) do |order_form| %>
+  <table id="cart-detail">
+
+    <%= render :partial => 'form', :locals => {:order_form => order_form} %>
+  
+    <% unless @order.line_items.empty? -%>
+      <tr>
+        <td colspan=4><b>Total</b></td>
+        <td><%= order_price(@order) %></td>
+      </tr>
+    <% end -%>    
+
+      <tr>
+        <td><b>Country</b></td>
+        <td colspan=3><%= "New Zealand" %><%# TBD get from order properties %></td>
+        <td></td>
+      </tr>
+
+      <tr id="delivery">
+        <td><b>Delivery method</b></td>
+        <td colspan=3>
+          <!--<form action="">-->
+          <!--  <!--<select name="delivery">-->-->
+          <!--  <!--  <option value="select">Please select delivery method</option>-->-->
+          <!--  <!--  <option value="pick-up">Pick up</option>-->-->
+          <!--  <!--  <option value="courier">Courier</option>-->-->
+          <!--  <!--</select>-->-->
+          <!--  <dl id="sample" class="dropdown">-->
+          <!--    <dt><a href="#"><span>Please select delivery method</span></a></dt>-->
+          <!--    <dd>-->
+          <!--      <ul>-->
+          <!--        <li><a href="#">Pick up-->
+          <!--            <span class="value">$0</span>-->
+          <!--            <span class="value GST-value">$0</span>-->
+          <!--            <span class="value total-value">$100</span>-->
+          <!--            </a>-->
+          <!--        </li>-->
+          <!--        <li><a href="#">Courier-->
+          <!--            <span class="value">$10.00</span>-->
+          <!--            <span class="value GST-value">$1.50</span>-->
+          <!--            <span class="value total-value">$111.50</span>-->
+          <!--            </a>-->
+          <!--        </li>-->
+          <!--      </ul>-->
+          <!--    </dd>-->
+          <!--  </dl>-->
+          <!--  -->
+          <!--</form>-->
+          <%= order_form.collection_select(:order_shipping_method_id, ShippingMethod.all, :id, :name) %>
+        </td>
+        <td><span id="delivery-price"></span></td>
+      </tr>
+      
+      <tr>
+        <td colspan=4><b>plus GST</b></td>
+        <td id="GST"></td>
+      </tr>
+
+      <tr>
+        <td colspan=4><b>Grand total (incl GST)</b></td>
+        <td id="Grand-total"></td>
+      </tr>
+
+  </table>
+    <div class="links">
+      <% unless @order.line_items.empty? -%>
+          <%#= link_to image_tag('/images/update.png') + t("update"), '#', :class => 'reversed', :onclick => "$('form#updatecart').submit(); return false;" %>
+          <%= link_to "CHECKOUT", checkout_path, :class => 'reversed', :style => 'float:right;' %>
+      <% end -%>
+      <p><%=link_to "CONTINUE SHOPPING", products_path, :class => 'reversed', :style => 'float:right;' %></p>
+    </div>
+  
+  <% end -%>
+</div>

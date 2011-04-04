@@ -1,0 +1,32 @@
+<%# Copied from \spree-0.11.0\vendor\extensions\theme_default\app\views\orders\_line_item.html.erb and edited %>
+
+<%- locals = {:item_form => item_form, :variant => variant, :line_item => line_item} -%>
+
+<tr class="<%= cycle('', 'alt') %>">
+  <td class="deletion">
+    <%= item_form.hidden_field :variant_id %>
+    <%= item_form.hidden_field :order_id %>
+    <%= link_to(image_tag('trashcan.png', :alt => "Delete line"), order_line_item_path(@order, line_item), :method => :delete) unless line_item.new_record? %>
+  </td>
+
+  <td>
+    <%= link_to variant.product.name,  product_path(variant.product) %>
+    <%= variant_options variant %>
+    <%= truncate(variant.product.description, :length => 100, :omission => "...") %>
+  </td>
+
+  <td>
+    <%=  product_price(line_item) %>
+  </td>
+
+  <td>
+    <%= item_form.text_field :quantity, :size => 3 %>
+    <%= link_to "update", '#', :onclick => "$('form#updatecart').submit(); return false;" %>
+  </td>
+
+  <td>
+    <% hook :cart_item_total, locals do %>
+      <%= format_price(product_price(line_item, :format_as_currency => false) * line_item.quantity) unless line_item.quantity.nil? %>
+    <% end %>
+  </td>
+</tr>

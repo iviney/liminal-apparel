@@ -1,0 +1,24 @@
+<%# Copied from \spree-0.11.0\vendor\extensions\theme_default\app\views\orders\_form.html.erb and edited %>
+<%# error_messages_for :order  %>
+
+<%= render "shared/error_messages", :target => @order %>
+  <thead>
+    <tr>
+      <th class="deletion"></th> <%# column for deletion icons %>
+      <th class="item"><%= t("item") %></th>
+      <th class="price"><%= t("price") %></th>
+      <th class="qty">Quantity</th>
+      <th class="total">Subtotal</th>
+    </tr>
+  </thead>
+  <tbody id="line_items">
+    <%= order_form.fields_for :line_items do |item_form| %>
+      <%= render 'line_item', :variant => item_form.object.variant, :line_item => item_form.object, :item_form => item_form %>
+    <% end %>
+
+    <% if @order.line_items.empty? -%>
+      <tr id="none">
+        <td colspan="5"><%= t("your_cart_is_empty.") -%></td>
+      </tr>
+    <% end -%>
+  </tbody>

@@ -54,7 +54,9 @@
   
   <div class="clear">
   </div>
-  
+
+  <%= form_for :order, :url => populate_orders_url do |f| %>
+
   <div id="T-shirt-order">
     <table id="option-matrix">
         <% @sc_matrix['colors'].each do |c| -%>
@@ -101,7 +103,7 @@
     </button>
 
   </div>
-
+  <% end %>
 
 <% else # original stuff for non-T-shirts
 %>
