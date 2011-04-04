@@ -21,7 +21,7 @@
           <% if current_user -%>
             <%# <li><%= link_to t('my_account'), user_path(current_user) %>
             <%#  </li>  %>
-            <%= link_to t('logout'), logout_path %>
+            <%= link_to t('logout'), destroy_user_session_path %>
           <% else %>
               <a href="/login" alt=""><img src="/images/T-shirt-logo.png" alt=""/>&nbsp;Log In</a>
           <% end -%>

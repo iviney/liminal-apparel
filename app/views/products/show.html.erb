@@ -1,0 +1,137 @@
+<%# Overrides the standard show view so we can do something completely different for T-shirts versus other products. %>
+<%# @sc_matrix contains stuff only if we're dealing with T-shirts (actually any product with size and colour variants). %>
+
+<% if @sc_matrix %>
+  <% content_for :extra_head_stuff do %>
+    <%= javascript_include_tag "liminal/t-shirts.js" %>
+  <% end %>
+ 
+  <div id="banner-small">
+    <img src="/images/banner-small.jpg" alt="" />
+  </div>
+  
+  <div id="main-T-shirt-area">
+    <div id="product-info">
+      <div class="reversed">WOMEN&#8217;S T-SHIRTS</div>
+      <h2>DETAILS</h2>
+      <ul>
+      <li>150 GSM 100% Cotton</li>
+      <li>Shoulder to shoulder tape</li>
+      <li>Fabric pre-shrunk to minimise shrinkage</li>
+      <li>Double needle bottom hem and sleeves</li>
+      <li>Extra long body, side seamed for a tailored fit.</li>
+      </ul>
+      <h2>DESCRIPTION</h2>
+      <p> Supermodels stay wafer thin by not eating, but everyone will
+          look great in our Wafer T. It's light and long, with enough
+          colours to please even the pickiest appetite.</p>
+      <h2>PRICING & DELIVERY</h2>
+      <p> Our t-shirts are $100.00 each inc GST. For more information see
+          our pricing & delivery page.</p>
+      <div class="footer"><div class="reversed">ORDER</div></div>
+    </div>
+    <div id="swatches">
+        <%# The <br>s are to make IE7 behave (otherwise it puts extra space below each image). %>
+        <img src="/images/swatch-BLUE.png" class="swatch" alt="" /><br />
+        <img src="/images/swatch-WHITE.png" class="swatch" alt="" /><br />
+        <img src="/images/swatch-BROWN.png" class="swatch" alt="" /><br />
+        <img src="/images/swatch-BLACK.png" class="swatch" alt="" /><br />
+        <img src="/images/swatch-GREEN.png" class="swatch" alt="" />
+    </div>
+    <div id="main-image">
+      <img src="/images/womens-blue-1.jpg" alt="" />
+      <div class="footer">
+        <div class="reversed caption">
+          <%# The <img>s must come before the text to keep IE7 happy! %>
+          <img class="thumbnail" src="/images/womens-blue-1.jpg" alt="" />
+          <img class="thumbnail" src="/images/womens-blue-2.jpg" alt="" />
+          <img class="thumbnail" src="/images/womens-blue-3.jpg" alt="" />
+          SKY BLUE
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="clear">
+  </div>
+  
+  <div id="T-shirt-order">
+    <table id="option-matrix">
+        <% @sc_matrix['colors'].each do |c| -%>
+        <tr>
+            <th>
+                <div class="cell">
+                    <img src="/images/swatch-<%=c.presentation.upcase%>.png" alt="" />
+                <p>
+                    <%= c.presentation.upcase %>
+                </p>
+                </div>
+            </th>
+            <% @sc_matrix['sizes'].each do |s| -%>
+            <td>
+                <% if @sc_matrix['variant_ids'][s.id.to_s + '_' + c.id.to_s] -%>
+                    <div class="cell">
+                        <p class="input_caption"><%= s.presentation %>
+                        </p>
+                        <input type="text" size="4" maxlength="4" name="variants[<%= @sc_matrix['variant_ids'][s.id.to_s + '_' + c.id.to_s] %>]" />
+
+                    </div>
+                <% else -%>
+                    <img src="/images/notavailable.jpg" alt="X" width="20" height="20"/> <%# TODO test %>
+                <% end -%>
+            </td>
+            <% end -%>
+        </tr>
+        <% end -%>
+    </table>
+
+    <div id="screen-printing-info">
+        <p><img src="/images/screen-printing-icon.png" alt="" />
+        &nbsp;&nbsp; <b>SCREEN PRINTING</b> &nbsp;&nbsp; Check here if you would like us to contact you about custom screen printing your order.</p>
+    </div>
+
+    <div class="reversed" style="float:left;">
+        <%= link_to "MEASUREMENTS", "/shop/size" %>
+    </div>
+
+    <button type='submit' style="float:right;">
+        <div class="reversed">
+                ADD TO CART <%= image_tag('/images/cart.png') %>
+        </div>
+    </button>
+
+  </div>
+
+
+<% else # original stuff for non-T-shirts
+%>
+
+  <% @body_id = 'product-details' %>
+  <h1><%= @product.name %></h1>
+  
+  <div id="product-images">
+    <div id="main-image">
+      <%= render 'image' -%>
+    </div>
+    <div id="thumbnails">
+      <%= render 'thumbnails', :product => @product -%>
+    </div>
+  </div>
+  
+  <div id="product-description">
+    <% hook :product_description do %>
+      <%= product_description(@product) rescue t("product_has_no_description") %>
+    <% end %>
+    <% hook :product_properties do %>
+      <%= render 'properties' %>
+    <% end %>
+  </div>
+  
+  <% hook :cart_form do %>
+    <div id="cart-form">
+      <%= render 'cart_form' %>
+    </div>
+  <% end %>
+  
+  <%= render 'taxons' %>
+<% end %>

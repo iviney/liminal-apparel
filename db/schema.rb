@@ -192,18 +192,19 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
 
   create_table "orders", :force => true do |t|
     t.integer  "user_id"
-    t.string   "number",               :limit => 15
-    t.decimal  "item_total",                                                       :default => 0.0, :null => false
-    t.decimal  "total",                                                            :default => 0.0, :null => false
+    t.string   "number",                   :limit => 15
+    t.decimal  "item_total",                                                           :default => 0.0, :null => false
+    t.decimal  "total",                                                                :default => 0.0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "state"
-    t.decimal  "adjustment_total",                                                 :default => 0.0, :null => false
-    t.decimal  "credit_total",                                                     :default => 0.0, :null => false
+    t.decimal  "adjustment_total",                                                     :default => 0.0, :null => false
+    t.decimal  "credit_total",                                                         :default => 0.0, :null => false
     t.datetime "completed_at"
+    t.integer  "order_shipping_method_id"
     t.integer  "bill_address_id"
     t.integer  "ship_address_id"
-    t.decimal  "payment_total",                      :precision => 8, :scale => 2, :default => 0.0
+    t.decimal  "payment_total",                          :precision => 8, :scale => 2, :default => 0.0
     t.integer  "shipping_method_id"
     t.string   "shipment_state"
     t.string   "payment_state"
@@ -212,6 +213,25 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
   end
 
   add_index "orders", ["number"], :name => "index_orders_on_number"
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "show_in_header",   :default => false, :null => false
+    t.boolean  "show_in_footer",   :default => false, :null => false
+    t.string   "foreign_link"
+    t.integer  "position",         :default => 1,     :null => false
+    t.boolean  "visible",          :default => true
+    t.string   "meta_keywords"
+    t.string   "meta_description"
+    t.string   "layout"
+    t.boolean  "show_in_sidebar",  :default => false, :null => false
+  end
+
+  add_index "pages", ["slug"], :name => "index_pages_on_slug"
 
   create_table "payment_methods", :force => true do |t|
     t.string   "type"
@@ -379,6 +399,11 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
     t.datetime "updated_at"
   end
 
+  create_table "queued_mails", :force => true do |t|
+    t.text   "object"
+    t.string "mailer"
+  end
+
   create_table "return_authorizations", :force => true do |t|
     t.string   "number"
     t.decimal  "amount",     :precision => 8, :scale => 2, :default => 0.0, :null => false
@@ -428,6 +453,11 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "display_on"
+  end
+
+  create_table "shipping_rates", :force => true do |t|
+    t.integer "shipping_category_id"
+    t.integer "shipping_method_id"
   end
 
   create_table "state_events", :force => true do |t|
@@ -552,6 +582,16 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
   end
 
   add_index "variants", ["product_id"], :name => "index_variants_on_product_id"
+
+  create_table "volume_prices", :force => true do |t|
+    t.integer  "variant_id"
+    t.string   "display"
+    t.string   "range"
+    t.decimal  "amount",     :precision => 8, :scale => 2
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "zone_members", :force => true do |t|
     t.integer  "zone_id"
