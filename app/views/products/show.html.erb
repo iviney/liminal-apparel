@@ -32,11 +32,13 @@
     </div>
     <div id="swatches">
         <%# The <br>s are to make IE7 behave (otherwise it puts extra space below each image). %>
-        <img src="/images/swatch-BLUE.png" class="swatch" alt="" /><br />
-        <img src="/images/swatch-WHITE.png" class="swatch" alt="" /><br />
-        <img src="/images/swatch-BROWN.png" class="swatch" alt="" /><br />
-        <img src="/images/swatch-BLACK.png" class="swatch" alt="" /><br />
-        <img src="/images/swatch-GREEN.png" class="swatch" alt="" />
+        <%# TODO lowercase names as Linux doesn't recognize uppercase.  Also it seems that github turns
+         uppercase filenames into lowercase. %>
+        <img src="/images/swatch-blue.png" class="swatch" alt="" /><br />
+        <img src="/images/swatch-white.png" class="swatch" alt="" /><br />
+        <img src="/images/swatch-brown.png" class="swatch" alt="" /><br />
+        <img src="/images/swatch-black.png" class="swatch" alt="" /><br />
+        <img src="/images/swatch-green.png" class="swatch" alt="" />
     </div>
     <div id="main-image">
       <img src="/images/womens-blue-1.jpg" alt="" />
@@ -46,7 +48,7 @@
           <img class="thumbnail" src="/images/womens-blue-1.jpg" alt="" />
           <img class="thumbnail" src="/images/womens-blue-2.jpg" alt="" />
           <img class="thumbnail" src="/images/womens-blue-3.jpg" alt="" />
-          SKY BLUE
+          <span>BLUE</span>
         </div>
       </div>
     </div>

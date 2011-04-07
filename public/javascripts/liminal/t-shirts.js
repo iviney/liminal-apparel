@@ -26,7 +26,7 @@ var add_image_handlers = function() {
     function() {
       var color = $(this).attr('src').match(/-(.+)\./)[1];
       $('#main-image > img').attr('src', '/images/womens-' + color + '-1.jpg'); // change main image to womens-color-1.jpg
-      $('#main-image .caption span').text(color); // change color description in caption under main photo
+      $('#main-image .caption span').text(color.toUpperCase()); // change color description in caption under main photo
       $('img.swatch').addClass('unselected'); // style other swatches as unselected
       $(this).removeClass('unselected');
     },
@@ -39,7 +39,7 @@ var add_image_handlers = function() {
     function() {
       var color = $(this).attr('src').match(/-(.+)\./)[1];
       $('#main-image').data('image_src', $('#main-image > img').attr('src'));  // make src image stick
-      $('#main-image').data('caption', color); // and also caption
+      $('#main-image').data('caption', color.toUpperCase()); // and also caption
       $('img.thumbnail').each(function(i) {$(this).attr('src','/images/womens-' + color + '-' + (i+1) + '.jpg');})
     });
   };
