@@ -7,7 +7,7 @@ div.inner input[type=text], div.inner select { width: 80%; }
 
 <fieldset id='billing'>
   <%= form.fields_for :bill_address do |bill_form| %>
-    <legend><%= "SHIPPING ADDRESS" %></legend>     <%# actually billing address but we force them to be the same below %>
+    <h3><%= "SHIPPING ADDRESS" %></h3>     <%# actually billing address but we force them to be the same below %>
     <div class="inner">
       <p class="field">&nbsp;</p>
       <p id="bfname" class="field">
