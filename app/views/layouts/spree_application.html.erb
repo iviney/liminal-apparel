@@ -1,3 +1,5 @@
+<%# Replaces gem's spree_application.html.erb %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -72,6 +74,7 @@
     </div>
 
     <div id="liminal-content">
+      <%= yield :post_header %>
       <%= yield %>
 
       <div class="clear"></div>

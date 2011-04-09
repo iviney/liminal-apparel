@@ -552,6 +552,15 @@ table#cart-detail {
   font-weight: normal;
 }
 
+#checkout input {
+  font-family: Tahoma, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  text-align: left;
+  background-color: rgb(200,200,200);
+  border: none;
+}
+
 /*Based on http://www.jankoatwarpspeed.com/post/2009/07/28/reinventing-drop-down-with-css-jquery.aspx*/
         .dropdown dd, .dropdown dt, .dropdown ul { margin:0px; padding:0px; }
         .dropdown dd { position:relative;}
