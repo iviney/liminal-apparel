@@ -1,0 +1,31 @@
+<%# Very similar to spree_application.html.erb, but with standard images on left.  Not used yet. %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<%= hook :inside_head do %>
+  <%= render :partial => 'shared/head'%>
+  <%= render :partial => 'shared/head_menu'%>
+<% end %>
+
+<%= yield :extra_head_stuff %>
+
+</head>
+
+<body >
+  <div class="liminal">
+    <%= render :partial => 'shared/main_menu' %>
+
+    <div id="liminal-content">
+      <%= yield :post_header %>
+      <%= yield %>
+
+      <div class="clear"></div>
+    </div>
+
+    <div id="liminal-footer">
+    </div>
+  </div>
+
+
+</body>

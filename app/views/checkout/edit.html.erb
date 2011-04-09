@@ -4,18 +4,34 @@
   <%= javascript_include_tag  'checkout', '/states' %>
 <% end %>
 
-<div id="checkout">
-  <h1><%= t("checkout")%></h1>
-  <%= checkout_progress %>
-  <br clear="left" />
-  <%= render "shared/error_messages", :target => @order %>
-  <%= hook :checkout_summary_box do %>
-    <div id="checkout-summary">
-      <%= render 'summary', :order => @order %>
-    </div>
-  <% end %>
-  <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}" } do |form| %>
-    <%= render @order.state, :form => form %>
-    <input id="post-final" type="submit" style="display:none"/>
-  <% end %>
+<% content_for :post_header do %>
+  <div id="banner-small">
+    <img src="/images/banner-small.jpg" />
+  </div>
+<% end %>
+
+<div id="page-pics">
+  <img src="/images/retail-pic1.jpg" />        <%# TBD: use specific images %>
+  <img src="/images/retail-pic2.jpg" />
 </div>
+
+<div id="page-body">
+
+  <div id="checkout">
+    <h1><%#= t("checkout")%></h1>
+    <%= checkout_progress %>
+    <br clear="left" />
+    <%= render "shared/error_messages", :target => @order %>
+    <%= hook :checkout_summary_box do %>
+      <div id="checkout-summary">
+        <%= render 'summary', :order => @order %>
+      </div>
+    <% end %>
+    <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}" } do |form| %>
+      <%= render @order.state, :form => form %>
+      <input id="post-final" type="submit" style="display:none"/>
+    <% end %>
+  </div>
+</div>
+
+<%= render :partial => 'shared/twitter_column'%>
