@@ -11,16 +11,18 @@ div.inner input[type=text], div.inner select { width: 80%; }
     <div class="inner">
       <p class="field">&nbsp;</p>
       <p id="bfname" class="field">
+        <span>
         <%= bill_form.label :firstname, t(:first_name) %>
-        <%= bill_form.text_field :firstname, :class => 'required' %><span class="req">*</span>
+        <%= bill_form.text_field :firstname, :class => 'required' %>
+        </span>
       </p>
       <p id="blname" class="field">
         <%= bill_form.label :lastname, t(:last_name) %>
-        <%= bill_form.text_field :lastname, :class => 'required' %><span class="req">*</span>
+        <%= bill_form.text_field :lastname, :class => 'required' %>
       </p>
       <p id="baddress" class="field">
         <%= bill_form.label :address1, t(:street_address) %>
-        <%= bill_form.text_field :address1, :class => 'required' %><span class="req">*</span>
+        <%= bill_form.text_field :address1, :class => 'required' %>
       </p>
       <p id="baddress2" class="field">
         <%= bill_form.label :address2, t(:street_address_2) %>
@@ -28,7 +30,7 @@ div.inner input[type=text], div.inner select { width: 80%; }
       </p>
       <p id="bcity" class="field">
         <%= bill_form.label :city, t(:city) %>
-        <%= bill_form.text_field :city, :class => 'required' %><span class="req">*</span>
+        <%= bill_form.text_field :city, :class => 'required' %>
       </p>
       <% if Spree::Config[:address_requires_state] %>
         <p class="field">
@@ -55,21 +57,19 @@ div.inner input[type=text], div.inner select { width: 80%; }
             // ]]>
             </script>
           </span>
-          <span class="req">*</span>
         </p>
       <% end %>
       <p id="bzip" class="field">
         <%= bill_form.label :zipcode, t(:zip) %>
-        <%= bill_form.text_field :zipcode, :class => 'required' %><span class="req">*</span>
+        <%= bill_form.text_field :zipcode, :class => 'required' %>
       </p>
       <p id="bcountry" class="field">
         <%= bill_form.label :country_id, t(:country) %>
         <span id="bcountry"><%= bill_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required'} %></span>
-        <span class="req">*</span>
       </p>
       <p id="bphone" class="field">
         <%= bill_form.label :phone, t(:phone) %>
-        <%= bill_form.text_field :phone, :class => 'required' %><span class="req">*</span>
+        <%= bill_form.text_field :phone, :class => 'required' %>
           </p>
           <% if Spree::Config[:alternative_billing_phone] %>
             <p id="baltphone">
