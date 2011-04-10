@@ -21,17 +21,31 @@ div.inner input[type=text], div.inner select { width: 80%; }
         <%= bill_form.text_field :lastname, :class => 'required' %>
       </p>
       <p id="baddress" class="field">
-        <%= bill_form.label :address1, t(:street_address) %>
+        <%= bill_form.label :address1, "Address" %>
         <%= bill_form.text_field :address1, :class => 'required' %>
       </p>
       <p id="baddress2" class="field">
-        <%= bill_form.label :address2, t(:street_address_2) %>
+        <%= bill_form.label :address2, "(cont'd)" %> <%# TBD: figure how to have a null string %>
         <%= bill_form.text_field :address2 %>
       </p>
       <p id="bcity" class="field">
         <%= bill_form.label :city, t(:city) %>
         <%= bill_form.text_field :city, :class => 'required' %>
       </p>
+      <p id="bzip" class="field">
+        <%= bill_form.label :zipcode, "Postcode" %>
+        <%= bill_form.text_field :zipcode, :class => 'required' %>
+      </p>
+      <p id="bphone" class="field">
+        <%= bill_form.label :phone, "Phone number" %>
+        <%= bill_form.text_field :phone, :class => 'required' %>
+      </p>
+          <% if Spree::Config[:alternative_billing_phone] %>
+            <p id="baltphone">
+              <%= bill_form.label :alternative_phone, t(:alternative_phone) %>
+              <%= bill_form.text_field :alternative_phone %>
+            </p>
+          <% end %>
       <% if Spree::Config[:address_requires_state] %>
         <p class="field">
           <span id="bstate">
@@ -59,24 +73,10 @@ div.inner input[type=text], div.inner select { width: 80%; }
           </span>
         </p>
       <% end %>
-      <p id="bzip" class="field">
-        <%= bill_form.label :zipcode, t(:zip) %>
-        <%= bill_form.text_field :zipcode, :class => 'required' %>
-      </p>
       <p id="bcountry" class="field">
         <%= bill_form.label :country_id, t(:country) %>
         <span id="bcountry"><%= bill_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required'} %></span>
       </p>
-      <p id="bphone" class="field">
-        <%= bill_form.label :phone, t(:phone) %>
-        <%= bill_form.text_field :phone, :class => 'required' %>
-          </p>
-          <% if Spree::Config[:alternative_billing_phone] %>
-            <p id="baltphone">
-              <%= bill_form.label :alternative_phone, t(:alternative_phone) %>
-              <%= bill_form.text_field :alternative_phone %>
-            </p>
-          <% end %>
     </div>
   <% end %>
 </fieldset>
