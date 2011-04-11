@@ -635,3 +635,21 @@ div#checkout #checkout_form_address #billing select {
   background-color: rgb(200,200,200);
   border-style: none;
 }
+#checkout button { /* undo all the stuff for button in screen.css! (same as #T-shirt-order button) */
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  background: none !important;
+  background-image: none !important;
+  border-style: none;
+  border-width: 0px !important;
+  border-color: inherit !important;
+  -moz-outline-radius: 0px;
+  color: inherit;
+  display: inherit;
+  line-height: inherit;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  text-transform: none;
+}
