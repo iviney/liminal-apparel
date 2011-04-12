@@ -1,0 +1,16 @@
+<%# Copied from spree_core-0.50.0/app/views/content/cvv.html.erb and modified. %>
+
+<%#= stylesheet_link_tag 'cvv.css' %> <%# Style this at some point. %>
+<div class="cvv">
+  <h2>What is a Credit Card Verification Code?</h2>
+  <p>For Visa and MasterCard, the card code is the last three-digit number located on the back of your card on or above
+    your signature line. </p>
+  <p>To help reduce fraud in the card-not-present environment, credit card companies introduced a card code
+    program. Visa calls this code the Card Verification Value (CVV); MasterCard calls it the Card Validation Code (CVC).
+    The card code is a three-digit security code that is printed on the back of cards. The number typically
+    appears at the end of the signature panel.</p>
+  <div class="cid-caption">Visa</div>
+  <%= image_tag "visa_cid.gif" %>
+  <div class="cid-caption">Master Card</div>
+  <%= image_tag "master_cid.jpg" %>
+</div>
