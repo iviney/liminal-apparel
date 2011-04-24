@@ -3,7 +3,12 @@
 <fieldset id="payment">
   <h3>PAYMENT INFORMATION</h3>
   <%= hook :checkout_payment_step, {:form => form} do %>
-  <p>
+    <%# Hide the radio buttons if there is only one to choose from %>
+    <% if @order.available_payment_methods.count <= 1 %>
+      <p style="display:none;">
+    <% else %>
+      <p>
+    <% end %>
     <% @order.available_payment_methods.each do |method| %>
       <label>
         <%= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == @order.payment_method %>
@@ -11,7 +16,7 @@
       </label>
       <br>
     <% end %>
-  </p>
+    </p>
 
     <ul id="payment-methods">
       <% @order.available_payment_methods.each do |method| %>
