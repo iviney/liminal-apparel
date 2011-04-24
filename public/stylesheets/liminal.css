@@ -623,17 +623,27 @@ div#checkout #checkout_form_payment { background-image: none; }
 #checkout fieldset {
   margin-top: 10px;
 }
-div#checkout #checkout_form_address #billing label {
+div#checkout #checkout_form_address #billing label,
+div#checkout #payment label {
   width: 30%;
   font-weight: normal;
   text-align: left;
   padding-right: 0px;
 }
-div#checkout #checkout_form_address #billing input { width: 240px; padding-left: 5px; margin-right: 0px; float:right;}
+div#checkout #checkout_form_address #billing input {width: 240px; padding-left: 5px; margin-right: 0px; float:right;}
+div#checkout #payment-methods input {width: 150px; padding-left: 5px; margin-right: 0px; float:right;}
 div#checkout #checkout_form_address #billing select {
   width: 245px;
   padding-left: 5px;
   margin-right: 0px;
+  float:right;
+  background-color: rgb(200,200,200);
+  border-style: none;
+}
+div#checkout #payment-methods select {
+  padding-left: 5px;
+  margin-right: 0px;
+  margin-left: 5px;
   float:right;
   background-color: rgb(200,200,200);
   border-style: none;
@@ -667,3 +677,4 @@ div#checkout #checkout_form_address #billing select {
   margin-bottom: 5px;
   margin-right: 5px;
 }
+div#checkout #payment-methods li {width: 368px;} /* same as page-body.  Argh. */
