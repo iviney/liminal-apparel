@@ -513,6 +513,10 @@ table#cart-detail {
   text-align: center;
 }
 
+#cart-detail td.total {
+  text-align: right;
+}
+
 #cart-detail td img {
   width: 16px;
 }
@@ -678,3 +682,12 @@ div#checkout #payment-methods select {
   margin-right: 5px;
 }
 div#checkout #payment-methods li {width: 368px;} /* same as page-body.  Argh. */
+
+#checkout #cart-detail {                         /* same as page-body.  Argh. */
+  width: 368px;
+}
+
+#checkout #cart-detail th.item {width: 65%;}
+#checkout #cart-detail th.price {width: 12%;}
+#checkout #cart-detail th.qty {width: 8%;}
+#checkout #cart-detail th.total {width: 15%;}

@@ -1,0 +1,14 @@
+<%# Copied from spree gem spree_core-0.50.0\app\views\checkout\_confirm.html.erb and modified. %>
+
+<fieldset id="order_details">
+  <div class="clear"></div>
+  <h3>CONFIRM</h3>
+  <%= render :partial => 'shared/order_details', :locals => {:order => @order} %>
+</fieldset>
+
+<hr class="space" />
+<button type='submit' style="float:right;">
+  <div class="reversed">
+  PLACE ORDER
+  </div>
+</button>

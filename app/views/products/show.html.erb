@@ -5,6 +5,7 @@
   <% content_for :extra_head_stuff do %>
     <%= javascript_include_tag "liminal/t-shirts.js" %>
   <% end %>
+  <% gender = @sc_matrix['gender']=='Male' ? 'mens' : 'womens' %>
  
   <div id="banner-small">
     <img src="/images/banner-small.jpg" alt="" />
@@ -12,7 +13,13 @@
   
   <div id="main-T-shirt-area">
     <div id="product-info">
-      <div class="reversed">WOMEN&#8217;S T-SHIRTS</div>
+      <div class="reversed">
+      <% if gender=='mens' then %>
+        MEN&#8217;S T-SHIRTS
+      <% else %>
+        WOMEN&#8217;S T-SHIRTS
+      <% end %>
+      </div>
       <h2>DETAILS</h2>
       <ul>
       <li>150 GSM 100% Cotton</li>
@@ -41,13 +48,13 @@
         <img src="/images/swatch-green.png" class="swatch" alt="" />
     </div>
     <div id="main-image">
-      <img src="/images/womens-blue-1.jpg" alt="" />
+      <img src="/images/<%=gender%>-blue-1.jpg" alt="" />
       <div class="footer">
         <div class="reversed caption">
           <%# The <img>s must come before the text to keep IE7 happy! %>
-          <img class="thumbnail" src="/images/womens-blue-1.jpg" alt="" />
-          <img class="thumbnail" src="/images/womens-blue-2.jpg" alt="" />
-          <img class="thumbnail" src="/images/womens-blue-3.jpg" alt="" />
+          <img class="thumbnail" src="/images/<%=gender%>-blue-1.jpg" alt="" />
+          <img class="thumbnail" src="/images/<%=gender%>-blue-2.jpg" alt="" />
+          <img class="thumbnail" src="/images/<%=gender%>-blue-3.jpg" alt="" />
           <span>BLUE</span>
         </div>
       </div>
