@@ -11,12 +11,12 @@ ProductsController.class_eval do
     return if variants.empty? ||
       object.option_types.select { |a| a.presentation == 'Size' }.empty? ||
       object.option_types.select { |a| a.presentation == 'Colour' }.empty?
-    desired_gender = params[:gender] || 'Female' # default to female if no gender specified
+    gender = params[:gender]=='Male' ? 'Male' : 'Female' # default to female if not explicitly set to male
     variant_ids = {}
     sizes = []
     colors = []
     variants.each do |variant|
-      if variant.option_values.detect{|a| a.option_type.presentation == 'Gender'}.presentation == desired_gender then # limit to desired gender
+      if variant.option_values.detect{|a| a.option_type.presentation == 'Gender'}.presentation == gender then # limit to desired gender
         active_size = variant.option_values.select { |a| a.option_type.presentation == 'Size' }.first
         active_color = variant.option_values.select { |a| a.option_type.presentation == 'Colour' }.first
         variant_ids[active_size.id.to_s + '_' + active_color.id.to_s] = variant.id
@@ -28,6 +28,6 @@ ProductsController.class_eval do
     @sc_matrix = { 'sizes' => sizes.sort_by { |s| size_sort[s.presentation] || 0 }.uniq,
         'colors' => colors.uniq,
         'variant_ids' => variant_ids,
-        'gender' => desired_gender}
+        'gender' => gender}
   end
 end

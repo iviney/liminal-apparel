@@ -1,6 +1,6 @@
 // The swatch selection drives the main image selection and its thumbnails.
 
-var gender;
+// var gender; // this is set in \app\views\products\show.html.erb
 // Thumbnail images are the full-size image just displayed small.  When you point at a thumbnail the main image changes to the
 // thumbnail image.  When you point away it changes back to what it was.  When you click on a thumbnail the main image permanently
 // changes to that thumbnail image.
@@ -47,5 +47,4 @@ var add_image_handlers = function() {
  
 jQuery(document).ready(function() {
   add_image_handlers();
-  gender = $('#main-image > img').attr('src').match(/images\/(.+)-.+-/)[1];
 });

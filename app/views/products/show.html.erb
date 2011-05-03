@@ -2,11 +2,13 @@
 <%# @sc_matrix contains stuff only if we're dealing with T-shirts (actually any product with size and colour variants). %>
 
 <% if @sc_matrix %>
+  <% gender = @sc_matrix['gender']=='Male' ? 'mens' : 'womens' %>
+
   <% content_for :extra_head_stuff do %>
+    <script type="text/javascript"> var gender = '<%= gender %>'; </script>
     <%= javascript_include_tag "liminal/t-shirts.js" %>
   <% end %>
-  <% gender = @sc_matrix['gender']=='Male' ? 'mens' : 'womens' %>
- 
+
   <div id="banner-small">
     <img src="/images/banner-small.jpg" alt="" />
   </div>
@@ -14,7 +16,7 @@
   <div id="main-T-shirt-area">
     <div id="product-info">
       <div class="reversed">
-      <% if gender=='mens' then %>
+      <% if gender=='mens' %>
         MEN&#8217;S T-SHIRTS
       <% else %>
         WOMEN&#8217;S T-SHIRTS

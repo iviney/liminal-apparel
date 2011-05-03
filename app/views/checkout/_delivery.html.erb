@@ -15,7 +15,7 @@
     </div>
     <% if Spree::Config[:shipping_instructions] && @order.rate_hash.present? %>
       <p id="minstrs">
-        <%= form.label :special_instructi ons, t("shipping_instructions") %><br />
+        <%= form.label :special_instructions, t("shipping_instructions") %><br />
         <%= form.text_area :special_instructions, :cols => 40, :rows => 7 %>
       </p>
     <% end %>
