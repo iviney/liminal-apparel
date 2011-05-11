@@ -225,6 +225,16 @@ a {color: white;}
   margin-bottom: 6px;
 }
 
+.tweet {
+  clear: both;
+  min-height: 100px;
+  background-color: #414141;
+}
+
+.tweet .loading {
+  padding: 8px;color: white;
+}
+
 .tweet li {
   font-family: Tahoma, sans-serif;
   font-size: 8pt;
@@ -287,10 +297,15 @@ table.table-5-column, table.table-6-column {table-layout: fixed;}
   height: 12px;
 }
 
-#twitter-column {
+#twitter-facebook-column {
   float: left;
   /* margin-right: 20px; */
   width: 170px;
+}
+
+#twitter-facebook-column a {
+  display: block;
+  float: left;
 }
 
 #main-T-shirt-area #product-info {
