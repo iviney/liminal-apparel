@@ -338,7 +338,7 @@ table.table-5-column, table.table-6-column {table-layout: fixed;}
   line-height: 9px; /* for IE7 bug */
 }
 
-#main-T-shirt-area .swatch {
+#main-T-shirt-area #swatches img {
   width: 65px;
   height: 65px;
   margin-bottom: 4px;
