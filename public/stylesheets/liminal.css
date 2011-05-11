@@ -79,21 +79,6 @@ a {color: white;}
   margin-bottom: 12px;
 }
 
-   #myGallery{ /* see http://jquery-howto.blogspot.com/2009/05/replacing-images-at-time-intervals.html */
-      position:relative;
-      width:723px; /* Set your image width */
-      height: 282px; /* Set your image height  258+12+12*/
-    }
-    #myGallery img{
-      display:none;
-      position:absolute;
-      top:0;
-      left:0;
-    }
-    #myGallery img.active{
-      display:block;
-    }
-
 #liminal-content #bottom-row {
   height: 170px;
   overflow: hidden;
