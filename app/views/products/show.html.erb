@@ -79,54 +79,57 @@
   </div>
 
   <%= form_for :order, :url => populate_orders_url do |f| %>
-    <div id="T-shirt-order">
-      <table id="option-matrix">
-        <% @sc_matrix['colors'].each do |c| %>
-          <tr>
+
+  <div id="T-shirt-order">
+    <table id="option-matrix">
+        <% @sc_matrix['colors'].each do |c| -%>
+        <tr>
             <th>
-              <div class="cell">
-                <%= image_tag "swatch-#{c.presentation.downcase}.png", :alt => "" %>
-                <p><%= c.presentation.upcase %></p>
-              </div>
+                <div class="cell">
+                    <img src="/images/swatch-<%=c.presentation.downcase%>.png" alt="" />
+                <p>
+                    <%= c.presentation.upcase %>
+                </p>
+                </div>
             </th>
-            
-            <% @sc_matrix['sizes'].each do |s| %>
-              <td>
-                <% if @sc_matrix['variant_ids'][s.id.to_s + '_' + c.id.to_s] %>
-                  <div class="cell">
-                    <p class="input_caption"><%= s.presentation %></p>
-                    <%= text_field_tag "variants[#{@sc_matrix['variant_ids'][s.id.to_s + '_' + c.id.to_s]}]", "", :size => 4, :maxlength => 4, :autocomplete => "off" %>
-                  </div>
-                <% else %>
-                  <%= image_tag "notavailable.jpg", :alt => "X", :width => 20, :height => 20 %><%# TODO test %>
-                <% end %>
-              </td>
-            <% end %>
-          </tr>
-        <% end %>
-      </table>
+            <% @sc_matrix['sizes'].each do |s| -%>
+            <td>
+                <% if @sc_matrix['variant_ids'][s.id.to_s + '_' + c.id.to_s] -%>
+                    <div class="cell">
+                        <p class="input_caption"><%= s.presentation %>
+                        </p>
+                        <input type="text" size="4" maxlength="4" name="variants[<%= @sc_matrix['variant_ids'][s.id.to_s + '_' + c.id.to_s] %>]" />
 
-      <div id="screen-printing-info">
-        <p>
-          <%= image_tag "screen-printing-icon.png", :alt => "" %>
-          &nbsp;&nbsp;<b>SCREEN PRINTING</b>
-          &nbsp;&nbsp; Check here if you would like us to contact you about custom screen printing your order.
-        </p>
-      </div>
+                    </div>
+                <% else -%>
+                    <img src="/images/notavailable.jpg" alt="X" width="20" height="20"/> <%# TODO test %>
+                <% end -%>
+            </td>
+            <% end -%>
+        </tr>
+        <% end -%>
+    </table>
 
-      <div class="reversed" style="float: left;">
-        <%= link_to "MEASUREMENTS", "/shop/size" %>
-      </div>
-
-      <button type='submit' style="float:right;">
-        <div class="reversed">
-          ADD TO CART <%= image_tag("cart.png") %>
-        </div>
-      </button>
+    <div id="screen-printing-info">
+        <p><img src="/images/screen-printing-icon.png" alt="" />
+        &nbsp;&nbsp; <b>SCREEN PRINTING</b> &nbsp;&nbsp; Check here if you would like us to contact you about custom screen printing your order.</p>
     </div>
+
+    <div class="reversed" style="float:left;">
+        <%= link_to "MEASUREMENTS", "/shop/size" %>
+    </div>
+
+    <button type='submit' style="float:right;">
+        <div class="reversed">
+                ADD TO CART <%= image_tag('/images/cart.png') %>
+        </div>
+    </button>
+
+  </div>
   <% end %>
 
-<% else # original stuff for non-T-shirts %>
+<% else # original stuff for non-T-shirts
+%>
 
   <% @body_id = 'product-details' %>
   <h1><%= @product.name %></h1>
