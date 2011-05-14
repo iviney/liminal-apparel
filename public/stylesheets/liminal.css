@@ -112,6 +112,11 @@ a {color: white;}
   opacity: 0.5;
 }
 
+ul.product-listing {
+  margin-top: 0px;
+  padding-top: 2em;
+}
+
 #liminal-footer {
   height: 70px;
   background-color: rgb(50,50,50);
