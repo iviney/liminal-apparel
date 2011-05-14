@@ -6,7 +6,7 @@
 
   <% content_for :extra_head_stuff do %>
     <%= javascript_tag do %>
-      var gender = <%= gender.to_json %>;
+      var gender = '<%= gender %>';
     <% end %>
     
     <%= javascript_include_tag "liminal/t-shirts.js" %>
@@ -53,11 +53,11 @@
     
     <div id="swatches">
       <%# The <br>s are to make IE7 behave (otherwise it puts extra space below each image). %>
-      <%= image_tag "swatch-blue.png", :alt => "" %><br />
-      <%= image_tag "swatch-white.png", :alt => "" %><br />
-      <%= image_tag "swatch-brown.png", :alt => "" %><br />
-      <%= image_tag "swatch-black.png", :alt => "" %><br />
-      <%= image_tag "swatch-green.png", :alt => "" %>
+      <%= image_tag "swatch-blue.png", :class => 'swatch', :alt => "" %><br />
+      <%= image_tag "swatch-white.png", :class => 'swatch', :alt => "" %><br />
+      <%= image_tag "swatch-brown.png", :class => 'swatch', :alt => "" %><br />
+      <%= image_tag "swatch-black.png", :class => 'swatch', :alt => "" %><br />
+      <%= image_tag "swatch-green.png", :class => 'swatch', :alt => "" %>
     </div>
     
     <div id="main-image">
