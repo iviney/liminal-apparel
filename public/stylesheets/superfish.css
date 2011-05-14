@@ -121,7 +121,25 @@ ul.sf-menu li li li.sfHover ul {
 	background:		white; /* #CFDEFF; */
 	color:			#414141; /* new */
 	outline:		0;
-	border-top-right-radius: 10px;
+}
+
+/*
+  Rounded top-right corner that works in IE7.
+  Use the non-hovered rule so that there is no delay in loading the image when needed.
+*/
+.sf-menu li div.corner-tr {
+  background-image: url(/images/menu-round-background.png);
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  right: 0px;
+  
+  top: -200px;
+}
+
+.sf-menu li:hover div.corner-tr,
+.sf-menu li.sfHover div.corner-tr {
+  top: 0px;
 }
 
 /*** arrows **/
