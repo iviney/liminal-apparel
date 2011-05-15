@@ -64,41 +64,6 @@
         <td></td>
       </tr>
 
-      <tr id="delivery">
-        <td><b>Delivery method</b></td>
-        <td colspan=3>
-          <!--<form action="">-->
-          <!--  <!--<select name="delivery">-->-->
-          <!--  <!--  <option value="select">Please select delivery method</option>-->-->
-          <!--  <!--  <option value="pick-up">Pick up</option>-->-->
-          <!--  <!--  <option value="courier">Courier</option>-->-->
-          <!--  <!--</select>-->-->
-          <!--  <dl id="sample" class="dropdown">-->
-          <!--    <dt><a href="#"><span>Please select delivery method</span></a></dt>-->
-          <!--    <dd>-->
-          <!--      <ul>-->
-          <!--        <li><a href="#">Pick up-->
-          <!--            <span class="value">$0</span>-->
-          <!--            <span class="value GST-value">$0</span>-->
-          <!--            <span class="value total-value">$100</span>-->
-          <!--            </a>-->
-          <!--        </li>-->
-          <!--        <li><a href="#">Courier-->
-          <!--            <span class="value">$10.00</span>-->
-          <!--            <span class="value GST-value">$1.50</span>-->
-          <!--            <span class="value total-value">$111.50</span>-->
-          <!--            </a>-->
-          <!--        </li>-->
-          <!--      </ul>-->
-          <!--    </dd>-->
-          <!--  </dl>-->
-          <!--  -->
-          <!--</form>-->
-          <%= order_form.collection_select(:order_shipping_method_id, ShippingMethod.all, :id, :name) %>
-        </td>
-        <td><span id="delivery-price"></span></td>
-      </tr>
-      
       <tr>
         <td colspan=4><b>plus GST</b></td>
         <td id="GST"></td>
