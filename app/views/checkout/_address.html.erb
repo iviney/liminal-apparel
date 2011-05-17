@@ -17,6 +17,10 @@ div.inner input[type=text], div.inner select { width: 80%; }
         <%= bill_form.label :lastname, t(:last_name) %>
         <%= bill_form.text_field :lastname, :class => 'required' %>
       </p>
+      <p id="bcname" class="field">
+        <%= bill_form.label :company_name, t(:company_name) %>
+        <%= bill_form.text_field :company_name %>
+      </p>
       <p id="baddress" class="field">
         <%= bill_form.label :address1, "Address" %>
         <%= bill_form.text_field :address1, :class => 'required' %>
