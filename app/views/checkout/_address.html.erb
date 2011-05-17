@@ -76,7 +76,7 @@ div.inner input[type=text], div.inner select { width: 80%; }
       <% end %>
       <p id="bcountry" class="field">
         <%= bill_form.label :country_id, t(:country) %>
-        <span id="bcountry"><%= bill_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required'} %></span>
+        <span><%== active_country.name %></span>
       </p>
     </div>
   <% end %>

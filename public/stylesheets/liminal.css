@@ -28,6 +28,8 @@ body {
 
 a {color: white;}
 
+#shopping-cart a { color: black; }
+
 #liminal-header ul {
   margin: 0;
 }
@@ -696,3 +698,6 @@ div#checkout #payment-methods li {width: 368px;} /* same as page-body.  Argh. */
 #checkout #cart-detail th.price {width: 12%;}
 #checkout #cart-detail th.qty {width: 8%;}
 #checkout #cart-detail th.total {width: 15%;}
+
+/* Fix spacing when country is not editable on the address form */
+#bcountry span { padding-left: 14px; }
