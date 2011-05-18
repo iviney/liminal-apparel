@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/fluxinc/spree-simple-volume-pricing.git
+  revision: cc5939e1fbdee7352a06aee7159d205274e58897
+  tag: v3.0.2
+  specs:
+    spree_simple_volume_pricing (3.0.2)
+      render_inheritable (>= 1.0.0)
+      spree_core (>= 0.40.3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -106,6 +115,8 @@ GEM
     rake (0.8.7)
     rd_resource_controller (1.0.1)
     rd_unobtrusive_date_picker (0.1.0)
+    render_inheritable (1.0.0)
+      rails (~> 3.0)
     spree (0.50.2)
       spree_api (= 0.50.2)
       spree_auth (= 0.50.2)
@@ -160,4 +171,5 @@ DEPENDENCIES
   capistrano
   rails (= 3.0.7)
   spree (= 0.50.2)
+  spree_simple_volume_pricing!
   sqlite3
