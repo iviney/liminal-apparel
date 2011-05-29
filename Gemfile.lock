@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/curlyheads/spree_paypal_express.git
+  revision: 228e341e581a3bf16c22fce622260e51562b587a
+  specs:
+    spree_paypal_express (1.0.0)
+      spree_core (>= 0.40.3)
+
+GIT
   remote: git://github.com/fluxinc/spree-simple-volume-pricing.git
   revision: cc5939e1fbdee7352a06aee7159d205274e58897
   tag: v3.0.2
@@ -171,5 +178,6 @@ DEPENDENCIES
   capistrano
   rails (= 3.0.7)
   spree (= 0.50.2)
+  spree_paypal_express!
   spree_simple_volume_pricing!
   sqlite3
