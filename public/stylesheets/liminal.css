@@ -124,6 +124,12 @@ ul.product-listing {
   background-color: rgb(50,50,50);
 }
 
+#liminal-footer a.other-site {
+  float: right;
+  display: block;
+  padding: 6px 6px 0px 0px;
+}
+
 #banner-small {
   padding-top: 12px;
   margin-bottom: 10px;
