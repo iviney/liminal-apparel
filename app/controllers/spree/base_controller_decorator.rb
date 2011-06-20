@@ -3,7 +3,9 @@ Spree::BaseController.class_eval do
   
   before_filter :set_currency
   
+  private
+  
   def set_currency
-    Variant.active_currency = (australia? ? "AUD" : "NZD")
+    Site.active_currency = (australia? ? "AUD" : "NZD")
   end
 end

@@ -1,12 +1,4 @@
 Variant.class_eval do
-  def self.active_currency
-    Thread.current[:active_currency]
-  end
-  
-  def self.active_currency=(currency)
-    Thread.current[:active_currency] = currency
-  end
-  
   def price
     product.master.active_currency_price || self[:price]
   end
@@ -20,6 +12,6 @@ Variant.class_eval do
   end
   
   def active_currency_price
-    currency_prices_hash[self.class.active_currency || "NZD"]
+    currency_prices_hash[Site.active_currency]
   end
 end

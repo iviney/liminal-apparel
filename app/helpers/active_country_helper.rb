@@ -4,6 +4,6 @@ module ActiveCountryHelper
   end
 
   def australia?
-    request.host.ends_with?(".au") || params[:au]
+    request.host.ends_with?(".au") || params[:au] || session[:australia]
   end
 end
