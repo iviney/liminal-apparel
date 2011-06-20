@@ -66,6 +66,7 @@ GEM
       bcrypt-ruby (~> 2.1.2)
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
+    diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     faker (0.9.5)
@@ -124,6 +125,19 @@ GEM
     rd_unobtrusive_date_picker (0.1.0)
     render_inheritable (1.0.0)
       rails (~> 3.0)
+    rspec (2.6.0)
+      rspec-core (~> 2.6.0)
+      rspec-expectations (~> 2.6.0)
+      rspec-mocks (~> 2.6.0)
+    rspec-core (2.6.4)
+    rspec-expectations (2.6.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.6.0)
+    rspec-rails (2.6.1)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
+      rspec (~> 2.6.0)
     spree (0.50.2)
       spree_api (= 0.50.2)
       spree_auth (= 0.50.2)
@@ -177,6 +191,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   rails (= 3.0.7)
+  rspec-rails
   spree (= 0.50.2)
   spree_paypal_express!
   spree_simple_volume_pricing!
