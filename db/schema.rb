@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110515035745) do
+ActiveRecord::Schema.define(:version => 20110620082126) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20110515035745) do
     t.datetime "updated_at"
     t.string   "state_name"
     t.string   "alternative_phone"
+    t.string   "company_name"
   end
 
   add_index "addresses", ["firstname"], :name => "index_addresses_on_firstname"
@@ -136,10 +137,11 @@ ActiveRecord::Schema.define(:version => 20110515035745) do
   create_table "line_items", :force => true do |t|
     t.integer  "order_id"
     t.integer  "variant_id"
-    t.integer  "quantity",                                 :null => false
-    t.decimal  "price",      :precision => 8, :scale => 2, :null => false
+    t.integer  "quantity",                                                       :null => false
+    t.decimal  "price",           :precision => 8, :scale => 2,                  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "volume_discount", :precision => 8, :scale => 2, :default => 0.0, :null => false
   end
 
   add_index "line_items", ["order_id"], :name => "index_line_items_on_order_id"
@@ -258,6 +260,13 @@ ActiveRecord::Schema.define(:version => 20110515035745) do
     t.string   "avs_response"
   end
 
+  create_table "paypal_accounts", :force => true do |t|
+    t.string "email"
+    t.string "payer_id"
+    t.string "payer_country"
+    t.string "payer_status"
+  end
+
   create_table "preferences", :force => true do |t|
     t.string   "name",       :limit => 100, :null => false
     t.integer  "owner_id",   :limit => 30,  :null => false
@@ -313,7 +322,7 @@ ActiveRecord::Schema.define(:version => 20110515035745) do
   add_index "product_scopes", ["product_group_id"], :name => "index_product_scopes_on_product_group_id"
 
   create_table "products", :force => true do |t|
-    t.string   "name",                 :default => "", :null => false
+    t.string   "name",                         :default => "",    :null => false
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -324,7 +333,8 @@ ActiveRecord::Schema.define(:version => 20110515035745) do
     t.datetime "deleted_at"
     t.string   "meta_description"
     t.string   "meta_keywords"
-    t.integer  "count_on_hand",        :default => 0,  :null => false
+    t.integer  "count_on_hand",                :default => 0,     :null => false
+    t.boolean  "variants_use_master_discount", :default => false, :null => false
   end
 
   add_index "products", ["available_on"], :name => "index_products_on_available_on"
@@ -568,30 +578,29 @@ ActiveRecord::Schema.define(:version => 20110515035745) do
 
   create_table "variants", :force => true do |t|
     t.integer  "product_id"
-    t.string   "sku",                                           :default => "",    :null => false
-    t.decimal  "price",           :precision => 8, :scale => 2,                    :null => false
-    t.decimal  "weight",          :precision => 8, :scale => 2
-    t.decimal  "height",          :precision => 8, :scale => 2
-    t.decimal  "width",           :precision => 8, :scale => 2
-    t.decimal  "depth",           :precision => 8, :scale => 2
+    t.string   "sku",                                                       :default => "",    :null => false
+    t.decimal  "price",                       :precision => 8, :scale => 2,                    :null => false
+    t.decimal  "weight",                      :precision => 8, :scale => 2
+    t.decimal  "height",                      :precision => 8, :scale => 2
+    t.decimal  "width",                       :precision => 8, :scale => 2
+    t.decimal  "depth",                       :precision => 8, :scale => 2
     t.datetime "deleted_at"
-    t.boolean  "is_master",                                     :default => false
-    t.integer  "count_on_hand",                                 :default => 0,     :null => false
-    t.decimal  "cost_price",      :precision => 8, :scale => 2
+    t.boolean  "is_master",                                                 :default => false
+    t.integer  "count_on_hand",                                             :default => 0,     :null => false
+    t.decimal  "cost_price",                  :precision => 8, :scale => 2
     t.integer  "position"
     t.string   "currency_prices"
+    t.boolean  "progressive_volume_discount",                               :default => false, :null => false
   end
 
   add_index "variants", ["product_id"], :name => "index_variants_on_product_id"
 
   create_table "volume_prices", :force => true do |t|
-    t.integer  "variant_id"
-    t.string   "display"
-    t.string   "range"
-    t.decimal  "amount",     :precision => 8, :scale => 2
-    t.integer  "position"
+    t.integer  "variant_id",        :null => false
+    t.integer  "starting_quantity", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "currency_prices"
   end
 
   create_table "zone_members", :force => true do |t|
