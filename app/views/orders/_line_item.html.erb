@@ -16,7 +16,7 @@
   </td>
 
   <td>
-    NZ <%=  product_price(line_item) %>
+    <%= Site.active_currency %> <%= product_price(line_item) %>
   </td>
 
   <td>
@@ -25,7 +25,7 @@
   </td>
 
   <td>
-    <% hook :cart_item_total, locals do %>
+    <%= hook :cart_item_total, locals do %>
       <%= format_price(product_price(line_item, :format_as_currency => false) * line_item.quantity) unless line_item.quantity.nil? %>
     <% end %>
   </td>

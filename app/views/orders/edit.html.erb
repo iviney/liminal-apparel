@@ -46,42 +46,43 @@
   <h3>Do you have everything you need?<br /><br /><h3>
 
   <%# form_for(@order, :url => object_url, :html => { :method => :put, :id => 'updatecart' }) do |order_form| %>
-  <%= form_for(@order, :url => update_cart_path, :html=>{:id=>'updatecart'}) do |order_form| %>
-  <table id="cart-detail">
+  <%= form_for @order, :url => update_cart_path, :html => { :id => 'updatecart' } do |order_form| %>
+    <table id="cart-detail">
 
-    <%= render :partial => 'form', :locals => {:order_form => order_form} %>
-  
-    <% unless @order.line_items.empty? -%>
-      <tr>
-        <td colspan=4><b>Total</b></td>
-        <td><%= order_price(@order) %></td>
-      </tr>
-    <% end -%>    
+      <%= render :partial => 'form', :locals => {:order_form => order_form} %>
+      
+      <% if (volume_discount = @order.volume_discount) > 0 %>
+        <tr>
+          <td colspan="4"><b>Volume discount</b></td>
+          <td><%= number_to_currency(@order.volume_discount, :precision => 2) %></td>
+        </tr>
+      <% end %>
+      
+      <% if @order.line_items.any? %>
+        <tr>
+          <td colspan="4"><b>Total</b></td>
+          <td><%= order_price(@order) %></td>
+        </tr>
+      <% end %>
 
       <tr>
         <td><b>Country</b></td>
-        <td colspan=3><%= "New Zealand" %><%# TBD get from order properties %></td>
+        <td colspan="3"><%= active_country.name %></td>
         <td></td>
       </tr>
 
       <tr>
-        <td colspan=4><b>plus GST</b></td>
-        <td id="GST"></td>
-      </tr>
-
-      <tr>
-        <td colspan=4><b>Grand total (incl GST)</b></td>
+        <td colspan=4><b>Total (excl GST)</b></td>
         <td id="Grand-total"></td>
       </tr>
-
-  </table>
+    </table>
+  
     <div class="links">
       <% unless @order.line_items.empty? -%>
           <%#= link_to image_tag('/images/update.png') + t("update"), '#', :class => 'reversed', :onclick => "$('form#updatecart').submit(); return false;" %>
           <%= link_to "CHECKOUT", checkout_path, :class => 'reversed', :style => 'float:right;' %>
       <% end -%>
-      <p><%=link_to "CONTINUE SHOPPING", products_path, :class => 'reversed', :style => 'float:right;' %></p>
+      <p><%= link_to "CONTINUE SHOPPING", products_path, :class => 'reversed', :style => 'float:right;' %></p>
     </div>
-  
   <% end -%>
 </div>
