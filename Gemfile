@@ -14,7 +14,7 @@ gem 'rspec-rails'
 #gem 'spree-product-options', :git => 'git://github.com/stephskardal/spree-product-options'
 # didn't seem to be be available for spree 0.50.
 
-gem 'spree_simple_volume_pricing', :git => 'git://github.com/fluxinc/spree-simple-volume-pricing.git', :tag => 'v3.0.2'
+gem 'spree_simple_volume_pricing', :git => 'git://github.com/jviney/spree-simple-volume-pricing.git', :branch => 'master'
 
 # Adds support for the Paypal Express checkout.
 # There was a bug with the version maintained by Spree which is fixed by this fork.

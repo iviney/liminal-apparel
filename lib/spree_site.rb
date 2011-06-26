@@ -1,4 +1,5 @@
 require "liminal_hooks"
+require "active_record/remove_validator"
 
 module SpreeSite
   class Engine < Rails::Engine

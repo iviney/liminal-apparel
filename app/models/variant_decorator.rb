@@ -1,17 +1,22 @@
 Variant.class_eval do
-  def price
-    product.master.active_currency_price || self[:price]
-  end
+  include Models::MultipleCurrencies
   
-  def currency_prices_hash
-    currency_prices.to_s.split(" ").inject({}) do |hash, s|
-      k, v = s.split(":")
-      hash[k] = BigDecimal(v)
-      hash
+  remove_validator :presence, :price
+  
+  def price
+    if product and product.master
+      product.master.price_using_active_currency
+    else
+      self[:price]
     end
   end
   
-  def active_currency_price
-    currency_prices_hash[Site.active_currency]
-  end
+  private
+    # Not required now that per-currency pricing is used.
+    def check_price
+    end
+    
+    def validate_currency_columns?
+      is_master?
+    end
 end

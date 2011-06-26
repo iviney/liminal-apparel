@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110620082126) do
+ActiveRecord::Schema.define(:version => 20110626083211) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -578,19 +578,19 @@ ActiveRecord::Schema.define(:version => 20110620082126) do
 
   create_table "variants", :force => true do |t|
     t.integer  "product_id"
-    t.string   "sku",                                                       :default => "",    :null => false
-    t.decimal  "price",                       :precision => 8, :scale => 2,                    :null => false
-    t.decimal  "weight",                      :precision => 8, :scale => 2
-    t.decimal  "height",                      :precision => 8, :scale => 2
-    t.decimal  "width",                       :precision => 8, :scale => 2
-    t.decimal  "depth",                       :precision => 8, :scale => 2
+    t.string   "sku",                         :default => "",    :null => false
+    t.decimal  "price"
+    t.decimal  "weight"
+    t.decimal  "height"
+    t.decimal  "width"
+    t.decimal  "depth"
     t.datetime "deleted_at"
-    t.boolean  "is_master",                                                 :default => false
-    t.integer  "count_on_hand",                                             :default => 0,     :null => false
-    t.decimal  "cost_price",                  :precision => 8, :scale => 2
+    t.boolean  "is_master",                   :default => false
+    t.integer  "count_on_hand",               :default => 0,     :null => false
+    t.decimal  "cost_price"
     t.integer  "position"
     t.string   "currency_prices"
-    t.boolean  "progressive_volume_discount",                               :default => false, :null => false
+    t.boolean  "progressive_volume_discount", :default => false, :null => false
   end
 
   add_index "variants", ["product_id"], :name => "index_variants_on_product_id"
@@ -602,6 +602,8 @@ ActiveRecord::Schema.define(:version => 20110620082126) do
     t.datetime "updated_at"
     t.string   "currency_prices"
   end
+
+  add_index "volume_prices", ["variant_id", "starting_quantity"], :name => "index_volume_prices_on_variant_id_and_starting_quantity", :unique => true
 
   create_table "zone_members", :force => true do |t|
     t.integer  "zone_id"
