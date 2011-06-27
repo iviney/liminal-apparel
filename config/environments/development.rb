@@ -30,4 +30,13 @@ LiminalApparel::Application.configure do
     :new_zealand => "dev.liminal.org.nz",
     :australia => "dev.liminal.org.au"
   }
+  
+  # In development, all domains should resolve to localhost
+  require "resolv"
+  Site.domains.values.each do |domain|
+    address = Resolv.getaddress(domain) rescue nil
+    unless address == "127.0.0.1"
+      puts "[WARNING] #{domain} does not resolve to 127.0.0.1. Please add it to /etc/hosts"
+    end
+  end
 end
