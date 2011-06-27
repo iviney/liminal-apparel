@@ -138,6 +138,7 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.6.0)
+    shoulda (2.11.3)
     spree (0.50.2)
       spree_api (= 0.50.2)
       spree_auth (= 0.50.2)
@@ -192,6 +193,7 @@ DEPENDENCIES
   capistrano
   rails (= 3.0.7)
   rspec-rails
+  shoulda
   spree (= 0.50.2)
   spree_paypal_express!
   spree_simple_volume_pricing!

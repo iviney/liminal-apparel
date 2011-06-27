@@ -2,7 +2,7 @@ CheckoutController.class_eval do
   before_filter :only_allow_active_country, :only => :update
   
   def paypal_site_opts
-    { :currency => Site.active_currency }
+    { :currency => @order.currency }
   end
 
   private

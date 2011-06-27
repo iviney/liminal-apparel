@@ -73,7 +73,10 @@
 
       <tr>
         <td colspan=4><b>Total (excl GST)</b></td>
-        <td id="Grand-total"></td>
+        <td id="Grand-total">
+          <%= @order.currency %>
+          <%= number_to_currency(@order.total, :precision => 2) %>
+        </td>
       </tr>
     </table>
   
