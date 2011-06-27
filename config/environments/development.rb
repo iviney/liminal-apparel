@@ -25,5 +25,9 @@ LiminalApparel::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  Site.domains = {
+    :new_zealand => "dev.liminal.org.nz",
+    :australia => "dev.liminal.org.au"
+  }
 end
-

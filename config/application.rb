@@ -10,9 +10,12 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module LiminalApparel
   class Application < Rails::Application
-  require 'spree_site'
-  config.middleware.use "RedirectLegacyProductUrl"
-  config.middleware.use "SeoAssist"
+    require 'spree_site'
+    require 'site'
+    
+    config.middleware.use "RedirectLegacyProductUrl"
+    config.middleware.use "SeoAssist"
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -43,9 +46,5 @@ module LiminalApparel
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-    
-    config.after_initialize do
-      require "site"
-    end
   end
 end

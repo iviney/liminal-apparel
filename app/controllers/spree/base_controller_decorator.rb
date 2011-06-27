@@ -5,11 +5,15 @@ Spree::BaseController.class_eval do
   
   private
     def set_currency
+      Site.active_currency = nil
+      
       # In the admin area we do not want an active currency
-      if self.class.name.starts_with?("Admin::")
-        Site.active_currency = nil
-      else
-        Site.active_currency = (australia? ? "AUD" : "NZD")
+      unless self.class.name.starts_with?("Admin::")
+        if new_zealand?
+          Site.active_currency = "NZD" 
+        elsif australia?
+          Site.active_currency = "AUD"
+        end
       end
     end
 end
