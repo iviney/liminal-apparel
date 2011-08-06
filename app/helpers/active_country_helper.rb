@@ -1,14 +1,13 @@
 module ActiveCountryHelper
   def active_country
-    return Country.find_by_name("New Zealand") if new_zealand?
-    return Country.find_by_name("Australia") if australia?
+    Country.find_by_name(australia? ? "Australia" : "New Zealand")
   end
   
   def new_zealand?
-    request.host.ends_with?(Site.domains[:new_zealand])
+    !australia?
   end
   
   def australia?
-    request.host.ends_with?(Site.domains[:australia])
+    Site.australia?(request.host)
   end
 end
