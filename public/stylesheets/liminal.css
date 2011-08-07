@@ -315,7 +315,7 @@ table.table-5-column, table.table-6-column {table-layout: fixed;}
 
 .reversed {
   background-color: rgb(50,50,50);
-  color: white;
+  color: white !important;
   font-family: Tahoma, sans-serif;
   font-size: 18px;
   font-weight: normal;
