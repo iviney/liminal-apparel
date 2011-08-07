@@ -12,22 +12,23 @@
 <%= render "shared/error_messages", :target => @user %>
 
 <div id="shopping-cart">
-  <h2><%= t("registration")%></h2>
+  <h1>LOG IN</h1>
   
   <div id="account">
-    <%= render :file => 'user_sessions/new' %>
+    <%= render "shared/login" %>
   </div>
   
   <% if Spree::Config[:allow_guest_checkout] %>
     <div id="guest_checkout">
+      <br />
       <%= render "shared/error_messages", :target => @order %>
-      <h2><%= t(:guest_user_account) %></h2>
+      <h1>CHECKOUT AS A GUEST</h2>
       <%= form_for @order, :url => update_checkout_registration_path, :html => { :method => :put, :id => "checkout_form_registration"} do |f| %>
         <p>
           <%= f.label :email, t("email") %><br />
           <%= f.text_field :email, :class => 'title'  %>
         </p>
-        <p><%= submit_tag t("continue"), :class => 'button primary' %></p>
+        <p><%= submit_tag t("continue") %></p>
       <% end %>
     </div>
   <% end %>

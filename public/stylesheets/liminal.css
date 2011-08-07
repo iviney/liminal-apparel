@@ -28,7 +28,7 @@ body {
 
 a {color: white;}
 
-#shopping-cart a { color: black; }
+#shopping-cart a, #existing-customer a { color: black; }
 
 #liminal-header ul {
   margin: 0;
@@ -266,12 +266,12 @@ table.table-5-column, table.table-6-column {table-layout: fixed;}
   padding-top: 0px;
 }
 
-#page-body table.table-2-column td a, #page-body a {
+#page-body table.table-2-column td a {
   color: #008040;
   text-decoration: none;
 }
 
-#page-body table.table-2-column td a:hover, #page-body a:hover {
+#page-body table.table-2-column td a:hover {
   color: #008040; /* green */
   font-weight: bold;
 }
@@ -569,7 +569,7 @@ table#cart-detail {
   font-weight: normal;
 }
 
-#checkout input, #checkout select {
+#checkout input, #checkout select, #password-credentials input {
   font-family: Tahoma, sans-serif;
   font-size: 8pt;
   font-weight: normal;
@@ -707,3 +707,15 @@ div#checkout #payment-methods li {width: 368px;} /* same as page-body.  Argh. */
 
 /* Fix spacing when country is not editable on the address form */
 #bcountry span { padding-left: 14px; }
+
+/* Login partial */
+#password-credentials p, #guest_checkout p {
+  margin: 0px;
+}
+#password-credentials label, #guest_checkout label {
+  display: inline-block;
+  width: 60px;
+}
+#password-credentials p input.title, #guest_checkout p input.title {
+  width: 300px;
+}
