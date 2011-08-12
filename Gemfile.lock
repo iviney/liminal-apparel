@@ -146,6 +146,8 @@ GEM
       spree_dash (= 0.50.2)
       spree_promo (= 0.50.2)
       spree_sample (= 0.50.2)
+    spree_additional_calculators (0.1.1)
+      spree_core (>= 0.50.2)
     spree_api (0.50.2)
       spree_core (= 0.50.2)
     spree_auth (0.50.2)
@@ -195,6 +197,7 @@ DEPENDENCIES
   rspec-rails
   shoulda
   spree (= 0.50.2)
+  spree_additional_calculators
   spree_paypal_express!
   spree_simple_volume_pricing!
   sqlite3

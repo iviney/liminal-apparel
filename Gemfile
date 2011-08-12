@@ -19,6 +19,8 @@ gem 'spree_simple_volume_pricing', :git => 'git://github.com/jviney/spree-simple
 # http://groups.google.com/group/spree-user/browse_thread/thread/7a20e9c8440980f8
 gem "spree_paypal_express", :git => "git://github.com/curlyheads/spree_paypal_express.git"
 
+gem 'spree_additional_calculators'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda'
