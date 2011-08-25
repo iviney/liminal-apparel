@@ -1,3 +1,4 @@
+
 body {
   background-image: url('/images/T-shirt-background.jpg');
   background-repeat: repeat;
@@ -184,6 +185,10 @@ ul.product-listing {
   text-decoration: none;
 }
 
+#page-body img.press {
+  width: 368px;
+}
+
 .liminal h1 {
   font-family: Tahoma, sans-serif;
   font-size: 14pt;
@@ -266,12 +271,12 @@ table.table-5-column, table.table-6-column {table-layout: fixed;}
   padding-top: 0px;
 }
 
-#page-body table.table-2-column td a {
+#page-body table.table-2-column td a, #page-body p a {
   color: #008040;
   text-decoration: none;
 }
 
-#page-body table.table-2-column td a:hover {
+#page-body table.table-2-column td a:hover, #page-body p a:hover {
   color: #008040; /* green */
   font-weight: bold;
 }
