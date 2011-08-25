@@ -296,10 +296,6 @@ table.table-5-column, table.table-6-column {table-layout: fixed;}
   vertical-align: middle; display: table-cell;
 }
 
-#retailers td, #retailers td a {
-  height: 12px;
-}
-
 #twitter-facebook-column {
   float: left;
   /* margin-right: 20px; */
