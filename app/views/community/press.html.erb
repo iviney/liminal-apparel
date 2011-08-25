@@ -3,8 +3,9 @@
 </div>
 
 <div id="page-pics">
-  <img src="/images/press-pic1.jpg" />
-  <img src="/images/press-pic2.jpg" />
+  <img src="/images/blank.png" />
+  <%#img src="/images/press-pic1.jpg" />
+  <img src="/images/press-pic2.jpg" /%>
 </div>
 
 <div id="page-body">
@@ -13,8 +14,15 @@
   
   <h1>PRESS</h1>  
   <p>
-  Insert text here...
+  See where everyone's talking about us...
   </p>
+
+  <%# TBD make this open a separate page that shows the image, so the browser doesn't size it to fit the window. %>
+  <a href="/images/Blue Caravan Sep 2011.png" target='_blank'>
+  <img class="press" src="/images/Blue Caravan Sep 2011.png" />
+  </a>
+
+  <p></p>
 </div>
 
 <%= render :partial => 'shared/twitter_column'%>
