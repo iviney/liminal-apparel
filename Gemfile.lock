@@ -120,7 +120,7 @@ GEM
       activesupport (= 3.0.7)
       rake (>= 0.8.7)
       thor (~> 0.14.4)
-    rake (0.9.2)
+    rake (0.8.7)
     rd_resource_controller (1.0.1)
     rd_unobtrusive_date_picker (0.1.0)
     render_inheritable (1.0.0)
@@ -194,6 +194,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   rails (= 3.0.7)
+  rake (= 0.8.7)
   rspec-rails
   shoulda
   spree (= 0.50.2)
