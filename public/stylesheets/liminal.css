@@ -308,9 +308,9 @@ table.table-5-column, table.table-6-column {table-layout: fixed;}
 }
 
 #main-T-shirt-area #product-info {
-  width: 296px; /* 723-340-11-65-11 */
+  width: 316px; /* 723-340-11-45-11 */
   float: left;
-  height: 341px; /* 4 x (65+4) + 65 */
+  height: 339px; /* 6 x (45+4) + 45 - though originally there were 5 swatches 65px wide */
   position: relative;
 }
 
@@ -345,16 +345,16 @@ table.table-5-column, table.table-6-column {table-layout: fixed;}
 }
 
 #main-T-shirt-area #swatches {
-  margin-left: 11px;
-  margin-right: 11px;
+  margin-left: 10px;
+  margin-right: 10px;
   float: left;
-  width: 65px;
+  width: 45px;
   line-height: 9px; /* for IE7 bug */
 }
 
 #main-T-shirt-area .swatch {
-  width: 65px;
-  height: 65px;
+  width: 45px;
+  height: 45px;
   margin-bottom: 4px;
 }
 
@@ -365,7 +365,7 @@ img.swatch {
 
 #main-T-shirt-area #main-image {
   width: 340px;
-  height: 341px;
+  height: 339px;
   float: right;
   position: relative;
   margin-right: 40px;
@@ -419,7 +419,7 @@ button .reversed img {
 
 #option-matrix .cell {
   position: relative;
-  height: 48px;
+  height: 40px;
 }
 
 #option-matrix .cell img {
