@@ -57,6 +57,8 @@
       <%= image_tag "swatch-white.png", :class => 'swatch', :alt => "" %><br />
       <%= image_tag "swatch-brown.png", :class => 'swatch', :alt => "" %><br />
       <%= image_tag "swatch-black.png", :class => 'swatch', :alt => "" %><br />
+      <%= image_tag "swatch-grey marl.png", :class => 'swatch', :alt => "" %><br />
+      <%= image_tag "swatch-navy.png", :class => 'swatch', :alt => "" %><br />
       <%= image_tag "swatch-green.png", :class => 'swatch', :alt => "" %>
     </div>
     
@@ -78,54 +80,58 @@
   <div class="clear">
   </div>
 
-  <%= form_for :order, :url => populate_orders_url do |f| %>
+  <% if shop_enabled %>
+    <%= form_for :order, :url => populate_orders_url do |f| %>
 
-  <div id="T-shirt-order">
-    <table id="option-matrix">
-        <% @sc_matrix['colors'].each do |c| -%>
-        <tr>
-            <th>
-                <div class="cell">
-                    <img src="/images/swatch-<%=c.presentation.downcase%>.png" alt="" />
-                <p>
-                    <%= c.presentation.upcase %>
-                </p>
-                </div>
-            </th>
-            <% @sc_matrix['sizes'].each do |s| -%>
-            <td>
-                <% if @sc_matrix['variant_ids'][s.id.to_s + '_' + c.id.to_s] -%>
+      <div id="T-shirt-order">
+        <table id="option-matrix">
+            <% @sc_matrix['colors'].each do |c| -%>
+            <tr>
+                <th>
                     <div class="cell">
-                        <p class="input_caption"><%= s.presentation %>
-                        </p>
-                        <input type="text" size="4" maxlength="4" name="variants[<%= @sc_matrix['variant_ids'][s.id.to_s + '_' + c.id.to_s] %>]" />
-
+                        <img src="/images/swatch-<%=c.presentation.downcase%>.png" alt="" />
+                    <p>
+                        <%= c.presentation.upcase %>
+                    </p>
                     </div>
-                <% else -%>
-                    <img src="/images/notavailable.jpg" alt="X" width="20" height="20"/> <%# TODO test %>
+                </th>
+                <% @sc_matrix['sizes'].each do |s| -%>
+                <td>
+                    <% if @sc_matrix['variant_ids'][s.id.to_s + '_' + c.id.to_s] -%>
+                        <div class="cell">
+                            <p class="input_caption"><%= s.presentation %>
+                            </p>
+                            <input type="text" size="4" maxlength="4" name="variants[<%= @sc_matrix['variant_ids'][s.id.to_s + '_' + c.id.to_s] %>]" />
+
+                        </div>
+                    <% else -%>
+                        <img src="/images/notavailable.jpg" alt="X" width="20" height="20"/> <%# TODO test %>
+                    <% end -%>
+                </td>
                 <% end -%>
-            </td>
+            </tr>
             <% end -%>
-        </tr>
-        <% end -%>
-    </table>
+        </table>
 
-    <div id="screen-printing-info">
-        <p><img src="/images/screen-printing-icon.png" alt="" />
-        &nbsp;&nbsp; <b>SCREEN PRINTING</b> &nbsp;&nbsp; Check here if you would like us to contact you about custom screen printing your order.</p>
-    </div>
-
-    <div class="reversed" style="float:left;">
-        <%= link_to "MEASUREMENTS", "/shop/size" %>
-    </div>
-
-    <button type='submit' style="float:right;">
-        <div class="reversed">
-                ADD TO CART <%= image_tag('/images/cart.png') %>
+        <div id="screen-printing-info">
+            <p><img src="/images/screen-printing-icon.png" alt="" />
+            &nbsp;&nbsp; <b>SCREEN PRINTING</b> &nbsp;&nbsp; Check here if you would like us to contact you about custom screen printing your order.</p>
         </div>
-    </button>
 
-  </div>
+        <div class="reversed" style="float:left;">
+            <%= link_to "MEASUREMENTS", "/shop/size" %>
+        </div>
+
+        <button type='submit' style="float:right;">
+            <div class="reversed">
+                    ADD TO CART <%= image_tag('/images/cart.png') %>
+            </div>
+        </button>
+
+      </div>
+    <% end %>
+  <% else %> <%# shop is not enabled %>
+    <h1><br/>Our online ordering is not open yet.  Please email any sales enquiries.</h1>
   <% end %>
 
 <% else # original stuff for non-T-shirts

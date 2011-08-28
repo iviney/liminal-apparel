@@ -1,22 +1,23 @@
 <%# /shared/_main_menu.html.erb %>
-
   <div id="liminal-header">
     <%= link_to image_tag("liminal-apparel.jpg", :class => "logo", :alt => ""), root_path %>
 
-    <ul class="links">
-      <%# this bit is based on _login_bar.html.erb %>
-      <li>
-        <% if current_user -%>
-          <%# <li><%= link_to t('my_account'), user_path(current_user) %>
-          <%#  </li>  %>
-          <%= link_to t('logout'), destroy_user_session_path %>
-        <% else %>
-            <a href="/login" alt=""><img src="/images/T-shirt-logo.png" alt=""/>&nbsp;Log In</a>
-        <% end -%>
-        &nbsp;&nbsp;
-        <a href="<%= cart_path %>"><img src="/images/cart.png" alt="">&nbsp;Shopping Cart</a>
-      </li>
-    </ul>
+    <% if shop_enabled %>
+      <ul class="links">
+        <%# this bit is based on _login_bar.html.erb %>
+        <li>
+          <% if current_user -%>
+            <%# <li><%= link_to t('my_account'), user_path(current_user) %>
+            <%#  </li>  %>
+            <%= link_to t('logout'), destroy_user_session_path %>
+          <% else %>
+              <a href="/login" alt=""><img src="/images/T-shirt-logo.png" alt=""/>&nbsp;Log In</a>
+          <% end -%>
+          &nbsp;&nbsp;
+          <a href="<%= cart_path %>"><img src="/images/cart.png" alt="">&nbsp;Shopping Cart</a>
+        </li>
+      </ul>
+    <% end %>
 
     <%# See http://www.dillerdesign.com/experiment/DD_roundies/ for IE support of rounded borders. %>
     <%# Or http://www.bestinclass.com/blog/2008/css3-border-radius-rounded-corners-ie/ %>
@@ -25,7 +26,7 @@
       <ul class="sf-menu">
         <li><a href="#">SHOP</a>
           <ul>
-            <li><a href="/products">Bags</a></li>
+            <li><a href="/#">Bags</a></li> <%# TBD Change to /products once shop and bags are working %>
             <li><a href="/products/freeset-t-shirt/?gender=Female">Women's T-shirts</a></li>
             <li><a href="/products/freeset-t-shirt/?gender=Male">Men's T-shirts</a></li>
             <li><a class="spaced" href="/shop/pricing">Pricing &amp; Delivery</a></li>
