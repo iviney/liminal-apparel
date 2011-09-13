@@ -8,7 +8,7 @@ LiminalApparel::Application.configure do
 
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
-  config.log_level = :warn # required to stop Ruby crashing when more verbose log levels are used
+  config.log_level = :warn # required to stop Ruby crashing under Windows when more verbose log levels are used
   # - see https://rails.lighthouseapp.com/projects/8994/tickets/5590 and
   #       http://redmine.ruby-lang.org/issues/show/3840
 

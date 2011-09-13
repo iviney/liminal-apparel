@@ -1,47 +1,54 @@
 <h1>RETAIL STOCKISTS</h1>
 
-<h2>BAGS</h2>
+<% if australia? %>
+  <h1>AUSTRALIA</h1>
 
-<h3>CHRISTCHURCH</h3>
+<% else # NZ %>
 
-<table class="table-2-column">
-  <tr><td>Black Bird, Heathcote Valley</td>       <td></td></tr>
-  <tr><td>Opawaho Organics</td>                   <td></td></tr>
-  <tr><td><a href="http://www.pikowholefoods.co.nz/lyttel-piko" target="_blank">Lyttel Piko</a></td>
-                                                  <td></td></tr>
-  <tr><td>Whare</td>                              <td></td></tr>
-  <tr><td>Kaizuka</td>                             <td></td></tr>
-  <td><a href="http://www.addingtoncoffee.org.nz" target="_blank">Addington Coffee Co-op</a></td><td></td></tr>
-</table>
+  <h1>NEW ZEALAND</h1>
+  <h2>BAGS</h2>
 
-<h3>NELSON AREA</h3>
-<table class="table-2-column">
-  <tr><td>Global Hope Shop, Nelson</td>       <td>The Choice Gallery, Picton</td></tr>
-  <tr><td>Nelson Escapes, Nelson</td>         <td>Evolve Imports, Picton</td></tr>
-  <tr><td>Mariposa, Nelson & Takaka</td>      <td>Floral Affair, Motueka</td></tr>
-</table>
+  <h3>CHRISTCHURCH</h3>
 
-<h3>REST OF SOUTH ISLAND</h3>
-<table class="table-2-column">
-  <tr><td>Cream Design Store, Queenstown</td>   <td>Step in Thyme, Invercargill</td></tr>
-  <tr><td>Body Treatz, Arrowtown</td>           <td>Things Design Store, Dunedin</td></tr>
-  <tr><td>Interlude, Timaru</td>                <td>Joseph Jones Designer Florist, Dunedin</td></tr>
-  <tr><td>French Polish, Invercargill</td>      <td>Fern Grove Souvenirs, Franz Joseph</td></tr>
-  <tr><td>Roslyn Pharmacy, Dunedin</td>         <td>Tradewinds, Greymouth</td></tr>
-</table>
+  <table class="table-2-column">
+    <tr><td>Black Bird, Heathcote Valley</td>       <td></td></tr>
+    <tr><td>Opawaho Organics</td>                   <td></td></tr>
+    <tr><td><a href="http://www.pikowholefoods.co.nz/lyttel-piko" target="_blank">Lyttel Piko</a></td>
+                                                    <td></td></tr>
+    <tr><td>Whare</td>                              <td></td></tr>
+    <tr><td>Kaizuka</td>                             <td></td></tr>
+    <td><a href="http://www.addingtoncoffee.org.nz" target="_blank">Addington Coffee Co-op</a></td><td></td></tr>
+  </table>
 
-<h3>NORTH ISLAND</h3>
-<table class="table-2-column">
-  <tr><td><a href="http://www.marketplacers.co.nz" target="_blank">www.marketplacers.co.nz</a></td></tr>
-</table>
+  <h3>NELSON AREA</h3>
+  <table class="table-2-column">
+    <tr><td>Global Hope Shop, Nelson</td>       <td>The Choice Gallery, Picton</td></tr>
+    <tr><td>Nelson Escapes, Nelson</td>         <td>Evolve Imports, Picton</td></tr>
+    <tr><td>Mariposa, Nelson & Takaka</td>      <td>Floral Affair, Motueka</td></tr>
+  </table>
 
-<h2>T-SHIRTS</h2>
-<p>We have only a few retail stores which stock our T-shirts as they are not our
-primary market.</p>
+  <h3>REST OF SOUTH ISLAND</h3>
+  <table class="table-2-column">
+    <tr><td>Cream Design Store, Queenstown</td>   <td>Step in Thyme, Invercargill</td></tr>
+    <tr><td>Body Treatz, Arrowtown</td>           <td>Things Design Store, Dunedin</td></tr>
+    <tr><td>Interlude, Timaru</td>                <td>Joseph Jones Designer Florist, Dunedin</td></tr>
+    <tr><td>French Polish, Invercargill</td>      <td>Fern Grove Souvenirs, Franz Joseph</td></tr>
+    <tr><td>Roslyn Pharmacy, Dunedin</td>         <td>Tradewinds, Greymouth</td></tr>
+  </table>
 
-<table class="table-2-column">
-  <tr><td><a href="http://www.pikowholefoods.co.nz/lyttel-piko" target="_blank">Lyttel Piko</a></td><td></td></tr>
-  <tr><td>Organic Village, Devonport, Auckland</td><td></td></tr>
-  <tr><td><a href="http://www.addingtoncoffee.org.nz" target="_blank">Addington Coffee Co-op,</a> Christchurch</td><td></td></tr>
-  <tr><td><a href="http://www.choosecrueltyfree.org.nz/" target="_blank">Safe</td><td></td></tr>
-</table>
+  <h3>NORTH ISLAND</h3>
+  <table class="table-2-column">
+    <tr><td><a href="http://www.marketplacers.co.nz" target="_blank">www.marketplacers.co.nz</a></td></tr>
+  </table>
+
+  <h2>T-SHIRTS</h2>
+  <p>We have only a few retail stores which stock our T-shirts as they are not our
+  primary market.</p>
+
+  <table class="table-2-column">
+    <tr><td><a href="http://www.pikowholefoods.co.nz/lyttel-piko" target="_blank">Lyttel Piko</a></td><td></td></tr>
+    <tr><td>Organic Village, Devonport, Auckland</td><td></td></tr>
+    <tr><td><a href="http://www.addingtoncoffee.org.nz" target="_blank">Addington Coffee Co-op,</a> Christchurch</td><td></td></tr>
+    <tr><td><a href="http://www.choosecrueltyfree.org.nz/" target="_blank">Safe</td><td></td></tr>
+  </table>
+<% end %>
