@@ -1,5 +1,12 @@
 RUBY_PATH = "/opt/ruby-1.8.7-p299/bin"
 
+target = ENV["target"]
+
+if target.nil?
+  target = "staging"
+  puts "No target variable set, using '#{target}'."
+end
+
 set :application, "liminal-apparel"
 
 set :scm, :git
@@ -7,7 +14,7 @@ set :repository, "git@github.com:iviney/liminal-apparel.git"
 
 set :user, "rails"
 set :use_sudo, false
-set :deploy_to, "/var/www/rails/liminal-apparel"
+set :deploy_to, "/var/www/rails/liminal-apparel/#{target}".tap { |r| p r }
 set :deploy_via, :remote_cache
 
 host = "test.store.liminal.org.nz"
@@ -42,10 +49,10 @@ namespace :sqlite3 do
   task :build_configuration, :roles => :db do
     db_options = {
       "adapter"  => "sqlite3",
-      "database" => "#{shared_database_path}/production.sqlite3",
+      "database" => "#{shared_database_path}/#{target}.sqlite3",
       "timeout"  => 5000
     }
-    config_options = { "production" => db_options }.to_yaml
+    config_options = { target => db_options }.to_yaml
     put config_options, "#{shared_config_path}/sqlite_config.yml"
   end
 
