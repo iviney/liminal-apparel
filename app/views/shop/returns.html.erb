@@ -13,15 +13,17 @@
   <h1>RETURNS & REFUNDS</h1>
 
   <h3>SAMPLES</h3>
-  <p>All samples will be invoiced out at full RRP, and can be credited back if returned within 10 days of
-  invoice for NZ customers, and 15 days to allow for freighting for Australian customers.
+  <p>All samples will be invoiced out at full RRP, and can be credited back if returned within
+  <%= australia? ? "15" : "10" %>
+  days of invoice.
   Anything returned outside this period will be deemed as purchased by the customer.
   Freighting of sample returns is at the customer’s expense.</p>
 
   <h3>EXCHANGES</h3>
   
-  <p>All exchanges must be returned within 10 days of invoice for NZ customers,
-  and 15 days to allow for freighting for Australian customers.</p>
+  <p>All exchanges must be returned within
+  <%= australia? ? "15" : "10" %>
+  days of invoice.</p>
   
   <h3>RETURNS</h3>
   
