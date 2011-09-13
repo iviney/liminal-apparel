@@ -48,7 +48,7 @@ LiminalApparel::Application.configure do
   config.active_support.deprecation = :notify
   
   Site.domains = {
-    :new_zealand => "test.store.liminal.org.nz",
-    :australia => "test.store.liminal.org.au"
+    :new_zealand => "liminal.org.nz",
+    :australia => "liminal.org.au"
   }
 end
