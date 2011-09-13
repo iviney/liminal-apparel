@@ -21,10 +21,13 @@
 
   <h3>SHIPPING AND FREIGHT</h3>
   <p>
-  New Zealand shipments nationwide will be dispatched within 5 working days
-  of the date ordered (blank T&#8209;shirts only). Freight prices are subject to change.
-  Australian shipments nationwide will take up to 10 working days to arrive,
-  but could take longer in some cases due to circumstances outside of our control.
+  <% if australia? %>
+    Australian shipments nationwide will take up to 10 working days to arrive,
+    but could take longer in some cases due to circumstances outside of our control.
+  <% else %>
+    New Zealand shipments nationwide will be dispatched within 5 working days
+    of the date ordered (blank T&#8209;shirts only). Freight prices are subject to change.
+  <% end %>
   </p>
 
 </div>
