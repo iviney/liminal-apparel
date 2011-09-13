@@ -10,30 +10,31 @@
 <div id="page-body">
 
   <h1>CONTACT</h1>
-          <h3><br />NEW ZEALAND</h3>
-          <p><br />
-            Email: <a href="mailto:sales@liminal.org.nz">sales@liminal.org.nz</a><br/>
-            Skype: liminal apparel<br />
-            Ph: 03 339 4581<br/>
-            Fax: 03 339 4583<br />
-            Web: <a href="http://www.liminal.org.nz">www.liminal.org.nz</a>
-          </p>
-          <p>
-          Liminal Apparel<br/>
-          P.O. Box 9192<br/>
-          Tower Junction<br/>
-          Christchurch 8149<br/>
-          New Zealand
-          </p>
-          <p></p>
-          <h3><br />AUSTRALIA</h3>
-          <p><br />
-            Email: <a href="mailto:sales@liminal.org.au">sales@liminal.org.au</a><br/>
-            Skype: liminal apparel<br />
-            Ph: +64 3 339 4581<br/>
-            Fax: +64 3 339 4583<br />
-            Web: <a href="http://www.liminal.org.au">www.liminal.org.au</a>
-          </p>
+  <% if australia? %>
+    <h3><br />AUSTRALIA</h3>
+    <p><br />
+      Email: <a href="mailto:sales@liminal.org.au">sales@liminal.org.au</a><br/>
+      Skype: liminal apparel<br />
+      Ph: +64 3 339 4581<br/>
+      Fax: +64 3 339 4583<br />
+      Web: <a href="http://www.liminal.org.au">www.liminal.org.au</a>
+  <% else %>
+    <h3><br />NEW ZEALAND</h3>
+    <p><br />
+      Email: <a href="mailto:sales@liminal.org.nz">sales@liminal.org.nz</a><br/>
+      Skype: liminal apparel<br />
+      Ph: 03 339 4581<br/>
+      Fax: 03 339 4583<br />
+      Web: <a href="http://www.liminal.org.nz">www.liminal.org.nz</a>
+    </p>
+  <% end %>
+  <p></p><p>
+  Liminal Apparel<br/>
+  P.O. Box 9192<br/>
+  Tower Junction<br/>
+  Christchurch 8149<br/>
+  New Zealand
+  </p>
 </div>
 
 <%= render :partial => 'shared/twitter_column'%>
