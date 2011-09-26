@@ -85,7 +85,7 @@
           <%#= link_to image_tag('/images/update.png') + t("update"), '#', :class => 'reversed', :onclick => "$('form#updatecart').submit(); return false;" %>
           <%= link_to "CHECKOUT", checkout_path, :class => 'reversed', :style => 'float:right;' %>
       <% end -%>
-      <p><%= link_to "CONTINUE SHOPPING", products_path, :class => 'reversed', :style => 'float:right;' %></p>
+      <p><%= link_to "CONTINUE SHOPPING", root_path, :class => 'reversed', :style => 'float:right;' %></p>
     </div>
   <% end -%>
 </div>
