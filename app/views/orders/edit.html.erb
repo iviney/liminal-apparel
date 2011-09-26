@@ -51,7 +51,7 @@
 
       <%= render :partial => 'form', :locals => {:order_form => order_form} %>
       
-      <% if (volume_discount = @order.volume_discount) > 0 %>
+      <% if (volume_discount = @order.volume_discount) != 0 %>
         <tr>
           <td colspan="4"><b>Volume discount</b></td>
           <td><%= number_to_currency(@order.volume_discount, :precision => 2) %></td>
