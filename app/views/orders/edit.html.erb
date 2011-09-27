@@ -54,14 +54,14 @@
       <% if (volume_discount = @order.volume_discount) != 0 %>
         <tr>
           <td colspan="4"><b>Volume discount</b></td>
-          <td><%= number_to_currency(@order.volume_discount, :precision => 2) %></td>
+          <td class="total"><%= number_to_currency(@order.volume_discount, :precision => 2) %></td>
         </tr>
       <% end %>
       
       <% if @order.line_items.any? %>
         <tr>
           <td colspan="4"><b>Total</b></td>
-          <td><%= order_price(@order) %></td>
+          <td class="total"><%= order_price(@order) %></td>
         </tr>
       <% end %>
 
@@ -73,7 +73,7 @@
 
       <tr>
         <td colspan=4><b>Total (excl GST)</b></td>
-        <td id="Grand-total">
+        <td class="total" id="Grand-total">
           <%= @order.currency %>
           <%= number_to_currency(@order.total, :precision => 2) %>
         </td>

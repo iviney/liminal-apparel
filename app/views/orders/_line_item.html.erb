@@ -24,7 +24,7 @@
     <%= link_to "update", '#', :onclick => "$('form#updatecart').submit(); return false;" %>
   </td>
 
-  <td>
+  <td class="total">
     <%= hook :cart_item_total, locals do %>
       <%= format_price(product_price(line_item, :format_as_currency => false) * line_item.quantity) unless line_item.quantity.nil? %>
     <% end %>
