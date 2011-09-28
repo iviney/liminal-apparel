@@ -1,6 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
-SERVER_ADDRESS = "test.store.liminal.org.nz"
+SERVER_ADDRESS = "staging.liminal.org.nz"   # TBD fix this for production (and development?)
 
 require 'rails/all'
 
