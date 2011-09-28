@@ -7,6 +7,8 @@ if target.nil?
   puts "No target variable set, using '#{target}'."
 end
 
+set :rails_env, target
+
 set :application, "liminal-apparel"
 
 set :scm, :git
