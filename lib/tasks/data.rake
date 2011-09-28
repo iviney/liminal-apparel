@@ -1,5 +1,5 @@
 namespace :data do
-  desc "Export development database to #{SERVER_ADDRESS}. Specifiy either production or staging (default)."
+  desc "Export development database to #{SERVER_ADDRESS}. Specify either production or staging (default)."
   task :upload, :target do |t, args|
     target = args[:target] || "staging"
     puts "Copying db/development.sqlite3 to #{target} at #{SERVER_ADDRESS} ..."
