@@ -24,7 +24,7 @@
           <fieldset>
             <%= render "checkout/payment/#{method.method_type}", :payment_method => method %>
           </fieldset>
-          <% if method.name="Paypal" %>
+          <% if method.name == "Paypal" %>
             <p>
               Continuing with Paypal will take you to a screen where you can pay using your credit card or your Paypal account.
             </p>
