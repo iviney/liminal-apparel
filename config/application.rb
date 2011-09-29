@@ -1,7 +1,5 @@
 require File.expand_path('../boot', __FILE__)
 
-SERVER_ADDRESS = "staging.liminal.org.nz"   # TBD fix this for production (and development?)
-
 require 'rails/all'
 
 # If you have a Gemfile, require the gems listed there, including any gems
