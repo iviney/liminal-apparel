@@ -1,0 +1,42 @@
+<%# Copied from spree_core-0.50.2\app\views\orders\show.html.erb for styling etc%>
+
+<% content_for :head do %>
+  <%= javascript_include_tag  'checkout', '/states' %>
+<% end %>
+
+<% content_for :post_header do %>
+  <div id="banner-small">
+    <img src="/images/banner-small.jpg" />
+  </div>
+<% end %>
+
+<div id="page-pics">
+  <img src="/images/retail-pic1.jpg" />
+  <img src="/images/retail-pic2.jpg" />
+</div>
+
+<div id="page-body">
+
+  <div id="checkout">
+    <div id="order">
+      <%= link_to t('back_to_store'), products_path %>
+
+      <%# if params.has_key? :checkout_complete TBD reinstate this and make it work one day, when we want to view orders at other times as well as after submission. %>
+        <br/><br/>
+        <p><%= 'Thank you for your business. A summary of this order has been emailed to you.' %></p>
+      <%# else %>
+        <%#= link_to t('my_account'), account_path if current_user%>
+      <%# end %>
+      <br/><br/>
+
+      <%= render :partial => 'shared/order_details', :locals => {:order => @order} %>
+
+      <br/>
+      <p><%= link_to "CONTINUE SHOPPING", root_path, :class => 'reversed', :style => 'float:right;' %></p>
+    </div>
+  </div>
+</div>
+
+<%= render :partial => 'shared/twitter_column'%>
+
+
