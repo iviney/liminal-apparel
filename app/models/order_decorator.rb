@@ -2,7 +2,11 @@ Order.class_eval do
   before_create :set_currency
   
   attr_protected :currency
-  
+
+  def adjustments_with_tax_last # returns adjustments, but sorted so all tax adjustments are last in the list
+    self.adjustments.select { |a| a.originator_type!="TaxRate"} + self.adjustments.select { |a| a.originator_type=="TaxRate"}  # put tax adjustments at the end
+  end
+
   private
     def set_currency
       self.currency = Site.active_currency
