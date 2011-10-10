@@ -21,6 +21,14 @@
 
     <%= checkout_progress %>
     <br clear="left" />
+
+    <% if flash.notice # borrowed from spree_core-0.50.2\app\views\layouts\spree_application.html.erb %>
+    <div class="flash notice"><%= flash.notice %></div>
+    <% end %>
+    <% if flash[:error] %>
+    <div class="flash errors"><%= flash[:error] %></div>
+    <% end %>
+
     <%= render "shared/error_messages", :target => @order %>
     <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}" } do |form| %>
       <%= render @order.state, :form => form %>
