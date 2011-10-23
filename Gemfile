@@ -24,3 +24,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda'
 end
+
+group :test do
+  gem 'factory_girl'
+  gem 'faker'
+end
