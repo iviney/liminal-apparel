@@ -26,7 +26,7 @@ module Models::MultipleCurrencies
       def validate_required_currencies_present
         Spree::Config[:required_currencies].to_s.split.each do |currency|
           unless currency_prices_hash.include?(currency)
-            errors.add :base, "Price missing for #{currency}"
+            errors.add :currency_prices, "Price missing for #{currency}"
           end
         end
       end
