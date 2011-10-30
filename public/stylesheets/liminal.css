@@ -384,7 +384,7 @@ img.swatch {
   margin-right: 40px;
 }
 
-#T-shirt-order button { /* undo all the stuff for button in screen.css! */
+#liminal-content button { /* undo all the stuff for button in screen.css! */
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
   border-radius: 0px;

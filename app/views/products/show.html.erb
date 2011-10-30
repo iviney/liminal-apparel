@@ -160,19 +160,19 @@
   </div>
   
   <div id="product-description">
-    <% hook :product_description do %>
+    <%# hook :product_description do %>
       <%= product_description(@product) rescue t("product_has_no_description") %>
-    <% end %>
-    <% hook :product_properties do %>
+    <%# end %>
+    <%# hook :product_properties do %>
       <%= render 'properties' %>
-    <% end %>
+    <%# end %>
   </div>
-  
-  <% hook :cart_form do %>
+
+  <%# hook :cart_form do %>
     <div id="cart-form">
       <%= render 'cart_form' %>
     </div>
-  <% end %>
+  <%# end %>
   
-  <%= render 'taxons' %>
+  <%# render 'taxons' %>
 <% end %>
