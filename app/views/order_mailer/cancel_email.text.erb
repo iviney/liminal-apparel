@@ -11,12 +11,10 @@ Phone +64 3 339 4581
 
 Dear Customer,
 
-Thank you for your business.
-
-Please review and retain the following order information for your records.  This is a GST tax invoice/receipt once your order is shipped.
+Your order has been CANCELLED.  Please retain this cancellation information for your records.
 
 ============================================================
-Order Summary
+Order Summary [CANCELED]
 ============================================================
 <% for item in @order.line_items %>
 <%=item.variant.sku %> <%=item.variant.product.name%> <%= variant_options(item.variant) %> (<%=item.quantity%>) @ <%= number_to_currency item.price %> = <%= number_to_currency(item.price * item.quantity) %>

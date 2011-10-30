@@ -4,7 +4,8 @@ Order.class_eval do
   attr_protected :currency
 
   def adjustments_with_tax_last # returns adjustments, but sorted so all tax adjustments are last in the list
-    self.adjustments.select { |a| a.originator_type!="TaxRate"} + self.adjustments.select { |a| a.originator_type=="TaxRate"}  # put tax adjustments at the end
+    adj = self.adjustments
+    adj.select { |a| a.originator_type!="TaxRate"} + adj.select { |a| a.originator_type=="TaxRate"}  # put tax adjustments at the end
   end
 
   private
