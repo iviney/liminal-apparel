@@ -32,6 +32,11 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
+
+  desc "Links assets"
+  task :link_assets, :roles => :web do
+    run "ln -nsf #{shared_path}/assets #{release_path}/public/assets"
+  end
 end
 
 # Bundler deployment setup
@@ -68,4 +73,5 @@ after "deploy:setup", "sqlite3:make_shared_folder"
 after "deploy:setup", "sqlite3:build_configuration"
  
 after "deploy", "sqlite3:link_configuration_file"
+after "deploy", "deploy:link_assets"
 after "sqlite3:link_configuration_file", "deploy:restart"
