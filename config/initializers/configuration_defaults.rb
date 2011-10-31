@@ -7,3 +7,4 @@ Spree::Config.set :checkout_zone => 'Liminal Sales Zone'
 Spree::Config.set :required_currencies => "NZD"
 Spree::Config.set :address_requires_state => false
 Spree::Config.set :admin_products_per_page => 50
+Spree::Config.set :products_per_page => 12 # for bags
