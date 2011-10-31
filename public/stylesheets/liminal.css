@@ -729,3 +729,12 @@ left: 0;
 right: 0;
 margin: auto;
 }
+
+.liminal .pagination {
+    margin-right: 40px;
+}
+
+.liminal .pagination a, .liminal .previous_page, .liminal .next_page {
+    color: black;
+    font-weight: normal;
+}
