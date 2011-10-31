@@ -11,7 +11,8 @@
             <%#  </li>  %>
             <%= link_to t('logout'), destroy_user_session_path %>
           <% else %>
-              <a href="/login" alt=""><img src="/images/T-shirt-logo.png" alt=""/>&nbsp;Log In</a>
+              <%# Logging in for users isn't done yet. %>
+              <%# <a href="/login" alt=""><img src="/images/T-shirt-logo.png" alt=""/>&nbsp;Log In</a> %>
           <% end -%>
           &nbsp;&nbsp;
           <a href="<%= cart_path %>"><img src="/images/cart.png" alt="">&nbsp;Shopping Cart</a>
