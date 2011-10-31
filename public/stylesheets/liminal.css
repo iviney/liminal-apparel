@@ -720,9 +720,9 @@ div#checkout #payment-methods li {width: 368px;} /* same as page-body.  Argh. */
   width: 300px;
 }
 
-/* Fix silliness that makes product pics overwrite stuff above */
+/* Fix silliness that makes product pics overwrite stuff above (removed position:absolute */
 #product-images #main-image img {
-position: absolute;
+position: relative;
 top: 0;
 bottom: 0;
 left: 0;
