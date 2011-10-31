@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110626234435) do
+ActiveRecord::Schema.define(:version => 20111029025801) do
 
   create_table "additional_calculator_rates", :force => true do |t|
     t.integer  "calculator_id",                                                                :null => false
@@ -233,6 +233,7 @@ ActiveRecord::Schema.define(:version => 20110626234435) do
     t.string   "email"
     t.text     "special_instructions"
     t.string   "currency"
+    t.boolean  "screen_printing"
   end
 
   add_index "orders", ["number"], :name => "index_orders_on_number"
