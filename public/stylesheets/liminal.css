@@ -1,4 +1,3 @@
-
 body {
   background-image: url('/images/liminalbackground_small1.png');
   background-repeat: repeat;
@@ -719,4 +718,14 @@ div#checkout #payment-methods li {width: 368px;} /* same as page-body.  Argh. */
 }
 #password-credentials p input.title, #guest_checkout p input.title {
   width: 300px;
+}
+
+/* Fix silliness that makes product pics overwrite stuff above */
+#product-images #main-image img {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+margin: auto;
 }
