@@ -8,3 +8,6 @@ Spree::Config.set :required_currencies => "NZD"
 Spree::Config.set :address_requires_state => false
 Spree::Config.set :admin_products_per_page => 50
 Spree::Config.set :products_per_page => 12 # for bags
+Spree::Config.set :allow_backorder_shipping => true
+Spree::Config.set :track_inventory_levels => false # will not track on_hand values for variants /products
+ 
