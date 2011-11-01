@@ -2,20 +2,24 @@
 
 <br/><h1><%= @taxon.name %></h1>
 
-<% content_for :sidebar do %>
-  <%= hook :taxon_sidebar_navigation do %>
-    <%= render :partial => "shared/taxonomies" %>
-    <%= render(:partial => "shared/filters") if @taxon.children.empty? %>
-  <% end %>
+<% if !Spree::Config[:allow_purchasing] %>
+    <h1><br/>Our online ordering is not currently open.  Please try again later.</h1>
+    <%# We don't stop them browsing the list, but the links are inactive %>
 <% end %>
 
-<% if @taxon.children.empty? || !params[:keywords].blank? %>
-  <%= hook :taxon_products do %>
-    <%= render :partial => "shared/products", :locals => {:products => @products, :taxon => @taxon } %>
-  <% end %>
-<% else %>
-  <%= hook :taxon_children do %>
-    <%= render :partial => "taxon", :collection => @taxon.children %>
-  <% end %>
-<% end %>
+    <% content_for :sidebar do %>
+      <%= hook :taxon_sidebar_navigation do %>
+        <%= render :partial => "shared/taxonomies" %>
+        <%= render(:partial => "shared/filters") if @taxon.children.empty? %>
+      <% end %>
+    <% end %>
 
+    <% if @taxon.children.empty? || !params[:keywords].blank? %>
+      <%= hook :taxon_products do %>
+        <%= render :partial => "shared/products", :locals => {:products => @products, :taxon => @taxon } %>
+      <% end %>
+    <% else %>
+      <%= hook :taxon_children do %>
+        <%= render :partial => "taxon", :collection => @taxon.children %>
+      <% end %>
+    <% end %>

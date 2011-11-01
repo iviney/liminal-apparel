@@ -2,7 +2,7 @@
   <div id="liminal-header">
     <%= link_to image_tag("liminal-apparel.jpg", :class => "logo", :alt => ""), root_path %>
 
-    <% if shop_enabled %>
+    <% if Spree::Config[:allow_purchasing] %>
       <ul class="links">
         <%# this bit is based on _login_bar.html.erb %>
         <li>

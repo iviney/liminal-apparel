@@ -85,7 +85,7 @@
   <div class="clear">
   </div>
 
-  <% if shop_enabled %>
+  <% if Spree::Config[:allow_purchasing] %>
     <%= form_for :order, :url => populate_orders_url do |f| %>
 
       <div id="T-shirt-order">
@@ -141,7 +141,7 @@
       </div>
     <% end %>
   <% else %> <%# shop is not enabled %>
-    <h1><br/>Our online ordering is not open yet.  Please email any sales enquiries.</h1>
+    <h1><br/>Our online ordering is not currently open.  Please try again later.</h1>
   <% end %>
 
 <% else # original stuff for non-T-shirts

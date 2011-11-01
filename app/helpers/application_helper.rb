@@ -8,8 +8,4 @@ module ApplicationHelper
     end
   end
 
-  def shop_enabled
-    true # false # setting this to false turns off the shopping aspects of the site
-  end
-
 end

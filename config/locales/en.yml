@@ -2,5 +2,6 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  allow_purchasing: "Allow purchasing"
   overview_welcome: "Currently there is not enough data to display the Overview Dashboard.<br/><br/> The dashboard will display automatically once the system has sufficient orders to allow generation of the statistics."
   tax: "GST"
