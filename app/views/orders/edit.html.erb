@@ -60,8 +60,15 @@
       
       <% if @order.line_items.any? %>
         <tr>
-          <td colspan="4"><b>Total</b></td>
+          <td colspan="4"><b>Sub-total</b></td>
           <td class="total"><%= order_price(@order) %></td>
+        </tr>
+      <% end %>
+
+      <% @order.adjustments_with_tax_last.each do |adjustment| %>
+        <tr>
+          <td colspan="4"><%= adjustment.label %></td>
+          <td class="total"><%= number_to_currency adjustment.amount %></td>
         </tr>
       <% end %>
 
@@ -72,16 +79,19 @@
       </tr>
 
       <tr>
-        <td colspan=4><b>Total (excl GST)</b></td>
+        <td colspan=4><b>Total</b></td>
         <td class="total" id="Grand-total">
           <%= @order.currency %>
           <%= number_to_currency(@order.total, :precision => 2) %>
         </td>
       </tr>
     </table>
-  
+
     <div class="links">
       <% unless @order.line_items.empty? -%>
+
+          <p>Shipping costs and GST are calculated during checkout.</p>
+
           <%#= link_to image_tag('/images/update.png') + t("update"), '#', :class => 'reversed', :onclick => "$('form#updatecart').submit(); return false;" %>
           <%= link_to "CHECKOUT", checkout_path, :class => 'reversed', :style => 'float:right;' %>
       <% end -%>
