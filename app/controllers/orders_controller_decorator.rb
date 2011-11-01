@@ -7,7 +7,7 @@ OrdersController.class_eval do
     end
   end
 
-  if instance_method_names.include?("populate")
+  if !instance_method_names.include?("populate_without_screen_printing")
     alias_method_chain :populate, :screen_printing
   end
 end
