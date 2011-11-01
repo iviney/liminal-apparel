@@ -10,7 +10,7 @@ CheckoutController.class_eval do
     redirect_to :back
   end
 
-  if instance_method_names.include?("paypal_payment")
+  if instance_method_names.include?("paypal_payment") and !instance_method_names.include?("paypal_payment_without_socket_error_fix")
     alias_method_chain :paypal_payment, :socket_error_fix
   end
 
@@ -41,7 +41,7 @@ CheckoutController.class_eval do
     opts
   end
   
-  if private_instance_methods.include?("order_opts")
+  if private_instance_methods.include?("order_opts") and !private_instance_methods.include?("order_opts_without_tax_fix")
     alias_method_chain :order_opts, :tax_fix
   end
 
