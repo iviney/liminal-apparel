@@ -1,5 +1,8 @@
 <div id="banner">
-  <%= image_tag %w(Group_bbgw.jpg Group_bgbg.jpg Group_bwbw.jpg).shuffle.first %>
+  <a href="community/our_story" target="_blank">
+    <%= image_tag australia? ? "liminal_fair_trade_banner_aus.jpg" : "liminal_fair_trade_banner_nz.jpg" %>
+  </a>
+  <%#= image_tag %w(Group_bbgw.jpg Group_bgbg.jpg Group_bwbw.jpg).shuffle.first %>
 </div>
 
 <div id="bottom-row">
