@@ -3,7 +3,7 @@
 <br/><h1><%= @taxon.name %></h1>
 
 <% if !Spree::Config[:allow_purchasing] %>
-    <h1><br/>Our online ordering is not currently open.  Please try again later.</h1>
+    <h1><br/><%= t(:shop_is_closed) %></h1>
     <%# We don't stop them browsing the list, but the links are inactive %>
 <% end %>
 

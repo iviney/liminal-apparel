@@ -4,4 +4,5 @@
 en:
   allow_purchasing: "Allow purchasing"
   overview_welcome: "Currently there is not enough data to display the Overview Dashboard.<br/><br/> The dashboard will display automatically once the system has sufficient orders to allow generation of the statistics."
+  shop_is_closed: "Our online ordering is not currently open.  Please try again later."
   tax: "GST"

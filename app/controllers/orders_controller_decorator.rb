@@ -10,4 +10,15 @@ OrdersController.class_eval do
   if !instance_method_names.include?("populate_without_screen_printing")
     alias_method_chain :populate, :screen_printing
   end
+
+  before_filter :redirect_if_shop_closed
+
+  private
+
+  def redirect_if_shop_closed
+    if !Spree::Config[:allow_purchasing]
+      flash[:error] = t(:shop_is_closed)
+      redirect_to root_path
+    end
+  end
 end

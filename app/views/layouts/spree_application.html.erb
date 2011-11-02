@@ -17,6 +17,10 @@
     <%= render :partial => 'shared/main_menu' %>
 
     <div id="liminal-content">
+      <% if flash[:error] %>
+        <div class="flash errors"><%= flash[:error] %></div>
+      <% end %>
+      
       <%= yield :post_header %>
       <%= yield %>
 
