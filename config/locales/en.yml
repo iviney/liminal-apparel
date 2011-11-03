@@ -3,6 +3,7 @@
 
 en:
   allow_purchasing: "Allow purchasing"
+  currency: "Currency"
   order_over_1000: "However, since the order value is over $1,000, Australian Customs may charge you GST on importation."
   no_gst_charged: "GST has not been charged on this order since it will be shipped from outside Australia."
   overview_welcome: "Currently there is not enough data to display the Overview Dashboard.<br/><br/> The dashboard will display automatically once the system has sufficient orders to allow generation of the statistics."
