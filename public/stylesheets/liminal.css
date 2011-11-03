@@ -124,10 +124,17 @@ ul.product-listing {
   background-color: rgb(50,50,50);
 }
 
+#liminal-footer h1 {
+  float: left;
+  padding-top: 20px;
+  color: #3f3f3f;
+  font-size: 50px;
+}
+
 #liminal-footer a.other-site {
   float: right;
   display: block;
-  padding: 6px 6px 0px 0px;
+  padding: 50px 6px 0px 0px;
 }
 
 #banner-small {
