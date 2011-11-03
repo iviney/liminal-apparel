@@ -19,7 +19,20 @@ CheckoutController.class_eval do
   def paypal_site_opts
     {
       :currency => @order.currency,
-      :header_image => "https://app.churchoffice.org.nz#{Spree::Config[:logo]}"
+      :header_image => "https://app.churchoffice.org.nz#{Spree::Config[:logo]}",
+
+      # Override the line items with a single 'item' that is the total.  This is to make paypal work with volume discounts,
+      # which paypal doesn't know about.
+      :items => [{
+         :name        => "Ordered items",
+         :sku         => "00000",
+         :quantity    => 1,
+         :amount      => (@order.item_total * 100).to_i, # convert for gateway
+         :weight      => 0,
+         :height      => 0,
+         :width       => 0,
+         :depth       => 0
+       }]
     }
   end
 
