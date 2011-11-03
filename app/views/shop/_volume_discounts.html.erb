@@ -1,0 +1,8 @@
+<h2>PRICING AND VOLUME DISCOUNTS (<%= Site.active_currency %>)</h2>
+<% t_shirt = Product.find(:first, :conditions => {:name => "Freeset T-shirt"}) %>
+<p>When buying 1 or more: <span class="price selling"><%= product_price(t_shirt) %></span>
+
+<% t_shirt.master.volume_prices.each do |vp| %>
+  <p>When buying <%= vp.starting_quantity %> or more: <span class="price selling"><%= product_price(vp) %></span>
+  </p>
+<% end %>

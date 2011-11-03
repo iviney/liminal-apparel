@@ -8,7 +8,7 @@
 
 <div id="page-body">
   <% @active_item = 1 %>
-  <%= render :partial => 'shared/page_menu_shop'%>
+  <%= render :partial => 'shared/page_menu_shop' %>
   
   <h1>PRICING & DELIVERY</h1>
 
@@ -19,6 +19,9 @@
   Liminal Apparel reserves the right to discontinue styles, colours and sizes at any stage.
   </p>
 
+  <%= render :partial => 'shop/volume_discounts' %>
+  <br />
+  
   <h3>SHIPPING AND FREIGHT</h3>
   <p>
   <% if australia? %>

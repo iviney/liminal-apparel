@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include ProductsHelper
+  
   def link_to_other_site
     if australia?
       link_to "Go to New Zealand Store (NZD)", root_url(:host => Site.domains[:new_zealand], :port => request.port), :class => "other-site"
