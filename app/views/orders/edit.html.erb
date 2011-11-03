@@ -90,7 +90,7 @@
     <div class="links">
       <% unless @order.line_items.empty? -%>
 
-          <p>Shipping costs and GST are calculated during checkout.</p>
+          <p>Shipping costs <%= !@order.australia? ? "and GST " : ""%>are calculated during checkout.</p>
 
           <%#= link_to image_tag('/images/update.png') + t("update"), '#', :class => 'reversed', :onclick => "$('form#updatecart').submit(); return false;" %>
           <%= link_to "CHECKOUT", checkout_path, :class => 'reversed', :style => 'float:right;' %>

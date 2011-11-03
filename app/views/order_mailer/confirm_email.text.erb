@@ -4,7 +4,7 @@ Tower Junction
 Christchurch 8149
 New Zealand
 
-GST number: 098-497-129
+<%= @order.australia? ? "Australian Business Number: 62141350886" : "GST number: 098-497-129" %>
 
 Phone +64 3 339 4581
 
@@ -13,7 +13,10 @@ Dear Customer,
 
 Thank you for your business.
 
-Please review and retain the following order information for your records.  This is a GST tax invoice/receipt once your order is shipped.
+Please review and retain the following order information for your records.  <%= !@order.australia? ? "This is a GST tax invoice/receipt once your order is shipped." : "" %>
+
+<%= @order.australia? ? t(:no_gst_charged) : ""%>
+<%= @order.australia? && @order.total > 1000 ? t(:order_over_1000) : "" %>
 
 ============================================================
 Order Summary

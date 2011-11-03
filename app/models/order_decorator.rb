@@ -8,6 +8,10 @@ Order.class_eval do
     adj.select { |a| a.originator_type!="TaxRate"} + adj.select { |a| a.originator_type=="TaxRate"}  # put tax adjustments at the end
   end
 
+  def australia?
+    self.currency == "AUD"
+  end
+
   private
     def set_currency
       self.currency = Site.active_currency
