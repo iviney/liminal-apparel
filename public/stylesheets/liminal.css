@@ -730,6 +730,11 @@ right: 0;
 margin: auto;
 }
 
+/* Make product images bigger */
+#product-images {
+width: 340px;
+}
+
 .liminal .pagination {
     margin-right: 40px;
 }

@@ -1,0 +1,12 @@
+<%# Copied from Spree core so we can change it to use the original image instead of :product, since the :product image is only 270x270. %>
+<%# The following code could be put in an image_decorator.rb file to change the size of future :product images
+    Image.class_eval do
+  attachment_definitions[:attachment][:styles][:product] = "340x340>"
+end
+%>
+
+<% if image %>
+  <%= image_tag image.attachment.url (:original) %>
+<% else %>
+  <%= product_image(@product) %>
+<% end %>
