@@ -43,7 +43,7 @@
   <% @body_id = 'cart' %>
   
   <h2>SHOPPING CART</h2>
-  <h3>Do you have everything you need?<br /><br /><h3>
+  <h3>Do you have everything you need?<br /><br /></h3>
 
   <%# form_for(@order, :url => object_url, :html => { :method => :put, :id => 'updatecart' }) do |order_form| %>
   <%= form_for @order, :url => update_cart_path, :html => { :id => 'updatecart' } do |order_form| %>
