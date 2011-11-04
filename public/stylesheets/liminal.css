@@ -308,10 +308,11 @@ table.table-5-column, table.table-6-column {table-layout: fixed;}
   width: 170px;
 }
 
+/* Not sure why this was here!
 #twitter-facebook-column a {
   display: block;
   float: left;
-}
+} */
 
 #main-T-shirt-area #product-info {
   width: 316px; /* 723-340-11-45-11 */
