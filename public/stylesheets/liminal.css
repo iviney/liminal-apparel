@@ -591,6 +591,9 @@ table#cart-detail {
   border: none;
 }
 
+#checkout #shipping_method input { /* Disgusting workaround for IE9 putting the background color around radio buttons */
+  background-color: inherit;
+}
 /*Based on http://www.jankoatwarpspeed.com/post/2009/07/28/reinventing-drop-down-with-css-jquery.aspx*/
         .dropdown dd, .dropdown dt, .dropdown ul { margin:0px; padding:0px; }
         .dropdown dd { position:relative;}
