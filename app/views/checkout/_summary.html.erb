@@ -1,23 +1,23 @@
-<%# Copied from Spree gem spree_core-0.50.0/app/views/checkout/_payment.html.erb and modified. %>
+<%# Copied from Spree gem spree_core-0.50.0/app/views/checkout/_payment.html.erb and modified to ensure tax (GST) is last in list. %>
 
 <h3><%= t(:order_summary) %></h3>
 <table>
   <tbody>
     <tr>
       <td><strong><%= t('item_total') %>:</strong></td>
-      <td><strong><%= number_to_currency order.item_total %></strong></td>
+      <td style="text-align:right;"><strong><%= number_to_currency order.item_total %></strong></td>
     </tr>
     <tbody id="summary-order-charges">
       <% order.adjustments_with_tax_last.each do |adjustment| %>
         <tr>
           <td><%= adjustment.label %>: </td>
-          <td><%= number_to_currency adjustment.amount %></td>
+          <td style="text-align:right;"><%= number_to_currency adjustment.amount %></td>
         </tr>
       <% end %>
     </tbody>
     <tr>
       <td><strong><%= t('order_total') %>:</strong></td>
-      <td><strong><span id='summary-order-total'><%= number_to_currency @order.total %></span></strong></td>
+      <td style="text-align:right;"><strong><span id='summary-order-total'><%= number_to_currency @order.total %></span></strong></td>
     </tr>
   </tbody>
 </table>
