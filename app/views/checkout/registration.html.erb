@@ -22,13 +22,20 @@
     <div id="guest_checkout">
       <br />
       <%= render "shared/error_messages", :target => @order %>
-      <h1>Email address</h2>
+      <h1>Email address</h1>
+      <p>Please enter your email address.</p>
+      
       <%= form_for @order, :url => update_checkout_registration_path, :html => { :method => :put, :id => "checkout_form_registration"} do |f| %>
         <p>
           <!-- <%= f.label :email, t("email") %><br /> -->
           <%= f.text_field :email, :class => 'title'  %>
         </p>
-        <p><%= submit_tag t("continue") %></p>
+        <hr class="space" />
+        <button type='submit' style="float:right;">
+          <div class="reversed">
+          CONTINUE
+          </div>
+        </button>
       <% end %>
     </div>
   <% end %>
