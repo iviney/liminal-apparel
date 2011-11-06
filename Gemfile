@@ -5,6 +5,8 @@ gem 'rails', '3.0.7'
 
 gem 'sqlite3'
 
+gem 'exception_notification'
+
 # Deploy with Capistrano
 gem 'capistrano'
 

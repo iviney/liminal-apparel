@@ -47,6 +47,12 @@ LiminalApparel::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   
+  # Email crash reports
+  LiminalApparel::Application.config.middleware.use ExceptionNotifier,
+    :email_prefix => "[Liminal Apparel] ",
+    :sender_address => %{"Crash notifier" <notifier@liminal.org.nz>},
+    :exception_recipients => %w{ian.viney@gmail.com}
+
   Site.domains = {
     :new_zealand => "staging.liminal.org.nz",
     :australia => "staging.liminal.org.au"

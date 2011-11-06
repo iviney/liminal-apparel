@@ -69,6 +69,8 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    exception_notification (2.5.2)
+      actionmailer (>= 3.0.4)
     factory_girl (2.2.0)
       activesupport
     faker (0.9.5)
@@ -196,6 +198,7 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano
+  exception_notification
   factory_girl
   faker
   rails (= 3.0.7)
