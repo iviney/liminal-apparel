@@ -6,5 +6,5 @@
 <% else %>
     <%# if shop isn't open, make the links inactive %>
     <%= link_to small_image(product), "#" %>
-    <%= link_to raw(product.name + " <span class='price selling'>#{product_price(product)}</span>"), "#", :class => 'info' %>
+    <%= link_to raw(product.name + " <span class='price selling'>#{product_price(product)}" + (australia? ? "" : " + GST") + "</span>"), "#", :class => 'info' %>
 <% end %>

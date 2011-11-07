@@ -8,7 +8,7 @@
       <p class="prices">
         <%= t("price") %>
         <br />
-        <span class="price selling"><%= product_price(@product) %></span>
+        <span class="price selling"><%= product_price(@product) %>"<%= (australia? ? "" : " + GST")%></span>
       </p>
     <% end %>
   <% end %>
