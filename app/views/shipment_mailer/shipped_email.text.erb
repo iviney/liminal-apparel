@@ -1,0 +1,27 @@
+<%# Copied from spree core for modification %>
+Liminal Apparel
+PO Box 9192
+Tower Junction
+Christchurch 8149
+New Zealand
+
+<%= @shipment.order.australia? ? "Australian Business Number: 62141350886" : "GST number: 098-497-129" %>
+
+Phone +64 3 339 4581
+
+
+Dear Customer,
+
+Your order has been shipped.
+
+============================================================
+Shipment Summary
+============================================================
+<% for item in @shipment.line_items %>
+<%=item.variant.sku %> <%=item.variant.product.name%> <%= variant_options(item.variant) %> (<%=item.quantity%>)
+<% end %>
+============================================================
+
+<%= "Tracking Information: #{@shipment.tracking}" if @shipment.tracking %>
+
+Thank you for your business.
