@@ -15,7 +15,7 @@ namespace :data do
     target = args[:target] || "staging"
     puts "Copying db/development.sqlite3 to #{target} at #{server_address} ..."
     do_command "scp -q db/development.sqlite3 rails@#{server_address}:rails/liminal-apparel/#{target}/shared/databases/#{target}.sqlite3"
-    do_command "scp -q -r public/assets/products rails@#{server_address}:rails/liminal-apparel/#{target}/current/public/assets"
+    do_command "scp -q -r public/assets/products rails@#{server_address}:rails/liminal-apparel/#{target}/current/public/assets/"
   end
   
   desc "Import database from remote server. Specify either production (default) or staging."
