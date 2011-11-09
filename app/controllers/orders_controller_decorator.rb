@@ -13,6 +13,14 @@ OrdersController.class_eval do
 
   before_filter :redirect_if_shop_closed
 
+  # Redefine show to add a check for valid parameters
+  def show
+    @order = Order.find_by_number(params[:id])
+    if !@order
+      redirect_to cart_path # if the parameters are scummed up (e.g. if a GET occurs instead of a PUT, avoid crashes)
+    end
+  end
+
   private
 
   def redirect_if_shop_closed
