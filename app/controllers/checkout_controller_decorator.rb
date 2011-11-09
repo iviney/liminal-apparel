@@ -14,6 +14,19 @@ CheckoutController.class_eval do
     alias_method_chain :paypal_payment, :socket_error_fix
   end
 
+  def update_registration # Fix bug in spree_core that didn't reset order state if update_attributes failed
+    # hack - temporarily change the state to something other than cart so we can validate the order email address
+    old_state = current_order.state
+    current_order.state = "address" # this is the state we'd like to go to
+    if current_order.update_attributes(params[:order])
+      redirect_to checkout_path
+    else
+      current_order.state = old_state # but if the update failed (e.g. missing email address, go back to state we were in)
+      @user = User.new
+      render 'registration'
+    end
+  end
+
   private
   
   def paypal_site_opts
