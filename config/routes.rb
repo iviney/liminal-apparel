@@ -1,7 +1,14 @@
 LiminalApparel::Application.routes.draw do
   root :to => "homepage#index"
 
-  match 'exception' => 'fake_exception#exception'
+  match 'exception' => 'fake_exception#exception' # Go to liminal.org.nz/exception to demonstrate this
+
+  match 'community/retail' => 'content#community_retail'
+  match 'shop/retail' => 'content#shop_retail'
+
+  namespace :admin do
+    resources :retailers
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,35 @@
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to "New retailer", new_object_url, :icon => 'add'  %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+<h1>Retailers</h1>
+<table class="index">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>URL</th>
+      <th>Country</th>
+      <th>Region</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @retailers.each do |retailer|%>
+    <tr id="<%= dom_id retailer %>">
+      <td><%=retailer.name %></td>
+      <td><%=retailer.url %></td>
+      <td><%=retailer.country %></td>
+      <td><%=retailer.region %></td>
+      <td><%=retailer.category %></td>
+      <td>
+      	<%= link_to_edit retailer %> &nbsp;
+      	<%= link_to_delete retailer %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

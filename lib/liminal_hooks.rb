@@ -23,4 +23,15 @@ class LiminalHooks < Spree::ThemeSupport::HookListener
   end
   
   replace :products_list_item, :partial => "shared/products_list_item"
+
+  # Add an admin item to maintain retailers
+  insert_after :admin_configurations_menu do # see spree_core-0.50.4\app\views\admin\configurations\index.html.erb
+  <<HTML
+  <tr>
+    <td><%= link_to "Retailers", admin_retailers_path %></td>
+    <td><%= "Maintain lists of retailers for different regions." %></td>
+  </tr>
+HTML
+  end
+
 end

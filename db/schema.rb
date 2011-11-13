@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111029025801) do
+ActiveRecord::Schema.define(:version => 20111112014118) do
 
   create_table "additional_calculator_rates", :force => true do |t|
     t.integer  "calculator_id",                                                                :null => false
@@ -434,6 +434,16 @@ ActiveRecord::Schema.define(:version => 20111029025801) do
   create_table "queued_mails", :force => true do |t|
     t.text   "object"
     t.string "mailer"
+  end
+
+  create_table "retailers", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.string   "country"
+    t.string   "region"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "return_authorizations", :force => true do |t|
