@@ -1,8 +1,8 @@
-<h1><%= t("new_tax_rate") %></h1>
+<h1>New Retailer</h1>
 
-<%= render 'shared/error_messages', :target => @tax_rate %>
+<%= render 'shared/error_messages', :target => @retailer %>
 
-<%= form_for(:tax_rate, :url => collection_url) do |f| %>
+<%= form_for(:retailer, :url => collection_url) do |f| %>
   <%= render :partial => "form", :locals => { :f => f } %>
   <%= render :partial => "admin/shared/new_resource_links" %>
 <% end %>

@@ -9,6 +9,7 @@ class CreateRetailers < ActiveRecord::Migration
 
       t.timestamps
     end
+    Retailer.make_data # put in our starting set of retailers
   end
 
   def self.down
