@@ -18,4 +18,9 @@ class Admin::RetailersController < Admin::BaseController
   def create_after
     Rails.cache.delete('retailers')
   end
+
+  def collection # see https://github.com/ernie/meta_search/tree/250c71772d30546d1b4a4134f51035610b4ba0bc
+    @search = Retailer.metasearch(params[:search])
+  end
+
 end

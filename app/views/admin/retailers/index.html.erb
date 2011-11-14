@@ -10,11 +10,11 @@
 <table class="index">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>URL</th>
-      <th>Country</th>
-      <th>Region</th>
-      <th>Category</th>
+      <th><%= sort_link @search, :name,     "Name" %></th>
+      <th><%= sort_link @search, :url,      "URL" %></th>
+      <th><%= sort_link @search, :country,  "Country" %></th>
+      <th><%= sort_link @search, :region,   "Region" %></th>
+      <th><%= sort_link @search, :category, "Category" %></th>
     </tr>
   </thead>
   <tbody>
