@@ -72,6 +72,5 @@ end
 after "deploy:setup", "sqlite3:make_shared_folder"
 after "deploy:setup", "sqlite3:build_configuration"
 
-after "deploy", "deploy:link_assets"
-after "deploy", "sqlite3:link_configuration_file"
-after "sqlite3:link_configuration_file", "deploy:restart"
+before "deploy:symlink", "deploy:link_assets"
+before "deploy:symlink", "sqlite3:link_configuration_file"
