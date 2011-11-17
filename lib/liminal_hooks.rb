@@ -24,8 +24,8 @@ class LiminalHooks < Spree::ThemeSupport::HookListener
   
   replace :products_list_item, :partial => "shared/products_list_item"
 
-  # Add an admin item to maintain retailers
-  insert_after :admin_configurations_menu do # see spree_core-0.50.4\app\views\admin\configurations\index.html.erb
+  # Add an admin item to maintain retailers  # see spree_core-0.50.4\app\views\admin\configurations\index.html.erb
+  insert_after :admin_configurations_menu do
   <<HTML
   <tr>
     <td><%= link_to "Retailers", admin_retailers_path %></td>
@@ -34,4 +34,6 @@ class LiminalHooks < Spree::ThemeSupport::HookListener
 HTML
   end
 
+  # Change order listing to include time on order date # see spree_core-0.50.4\app\views\admin\orders\index.html.erb
+  replace :admin_orders_index_rows, :partial => 'admin/shared/orders_index_rows.html.erb'
 end
