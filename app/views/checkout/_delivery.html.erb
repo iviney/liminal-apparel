@@ -22,7 +22,7 @@
   </div>
 </fieldset>
 
-<%= @order.australia? ? t(:no_gst_charged) + (@order.total > 1000 ? t(:order_over_1000) : "") : "" %>
+<%= @order.australia? && @order.total > 1000 ? t(:order_over_1000) : "" %>
 
 <hr class="space" />
 <button type='submit' style="float:right;">
