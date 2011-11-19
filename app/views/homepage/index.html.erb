@@ -27,7 +27,16 @@
         <div class="label">BAGS</div>
       </a>
     </div>
+
+    <%if @show_specials %>
+        <div class="category">
+          <a href="/t/categories/specials">
+          <img src="/images/specials-nohover.jpg" alt=""/>
+            <div class="label">SPECIALS</div>
+          </a>
+        </div>
+    <% end %>
   </span>
   
-  <%= render :partial => 'shared/twitter_column' %>
+  <%= @show_specials ? "" : (render :partial => 'shared/twitter_column') %>
 </div>
