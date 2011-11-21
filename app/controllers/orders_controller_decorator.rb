@@ -28,20 +28,6 @@ OrdersController.class_eval do
   end
 
   # ===================================================================================================================
-  # Redefine #rate_hash to cope with admin-only shipping methods - see \spree_core-0.50.4\app\models\order.rb
-  def rate_hash
-    @rate_hash ||= available_shipping_methods(:front_end).collect do |ship_method|
-      next if ship_method.admin_only && !user.roles.any? {|r| r.name == "admin"} # ignore method if it's admin only and our user does not have an admin role
-      next unless cost = ship_method.calculator.compute(self)
-      { :id => ship_method.id,
-        :shipping_method => ship_method,
-        :name => ship_method.name,
-        :cost => cost
-      }
-    end.compact.sort_by{|r| r[:cost]}
-  end
-
-  # ===================================================================================================================
   # Redirect access to orders if the shop is closed.
   private
 

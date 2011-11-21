@@ -45,10 +45,11 @@ HTML
   # Add an admin-only field to the shipping_methods admin forms (see spree_core-0.50.4/app/views/admin/shipping_methods/_form.html.erb)
   insert_after :admin_shipping_method_form_fields do
   <<HTML
-  <label>
-    <%= f.check_box(:admin_only)  %><%= t(:show_method_to_admin_users_only) %>
-    <br />
-  </label>
+  <p>
+    <label>
+    <%= f.check_box(:admin_only)  %> &nbsp; <%= t(:show_method_to_admin_users_only) %>
+    </label>
+  </p>
 HTML
   end
 
