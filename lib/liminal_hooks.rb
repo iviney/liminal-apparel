@@ -36,4 +36,25 @@ HTML
 
   # Change order listing to include time on order date # see spree_core-0.50.4\app\views\admin\orders\index.html.erb
   replace :admin_orders_index_rows, :partial => 'admin/shared/orders_index_rows.html.erb'
+
+  # Add an admin-only field to the shipping_methods admin forms (see spree_core-0.50.4/app/views/admin/shipping_methods/_form.html.erb)
+  insert_after :admin_shipping_method_form_fields do
+  <<HTML
+  <%= f.field_container :admin_only do %>
+    <label>
+    <%= f.check_box(:admin_only)  %><%= t(show_method_to_admin_users_only) %>
+    <br />
+    </label>
+  <% end %>
+HTML
+  end
+
+  # Add admin-only column to listing of shipping methods in admin - see \spree_core-0.50.4\app\views\admin\shipping_methods\index.html.erb
+  insert_after :admin_shipping_methods_index_headers do
+    %(<th><%= t("admin_only") %></th>)
+  end
+
+  insert_after :admin_shipping_methods_index_rows do
+    %(<td><%= shipping_method.admin_only ? "Yes" : "" %></td>)
+  end
 end

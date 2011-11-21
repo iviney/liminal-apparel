@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111112014118) do
+ActiveRecord::Schema.define(:version => 20111121022333) do
 
   create_table "additional_calculator_rates", :force => true do |t|
     t.integer  "calculator_id",                                                                :null => false
@@ -495,6 +495,7 @@ ActiveRecord::Schema.define(:version => 20111112014118) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "display_on"
+    t.boolean  "admin_only"
   end
 
   create_table "shipping_rates", :force => true do |t|
