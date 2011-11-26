@@ -5,13 +5,14 @@ class LiminalHooks < Spree::ThemeSupport::HookListener
   insert_before :admin_order_show_details, :partial => "admin/orders/screen_printing"
 
   #===================================================================================================================
-  # Add a column in admin order listing to show currency of order
+  # Change order listing to include time on order date # see spree_core-0.50.4\app\views\admin\orders\index.html.erb
+  # And to add a currency column.
+
+  replace :admin_orders_index_rows, :partial => 'admin/shared/orders_index_rows.html.erb'
+
+  # Add a column header in admin order listing to show currency of order
   insert_after :admin_orders_index_headers do # see spree_core-0.50.4\app\views\admin\orders\index.html.erb
      %( <th><%= sort_link @search, :currency, t("currency") %></th>)
-  end
-
-  insert_after :admin_orders_index_rows do
-    %(<td><%= order.currency %></td>)
   end
 
   #===================================================================================================================
@@ -36,10 +37,6 @@ class LiminalHooks < Spree::ThemeSupport::HookListener
   </tr>
 HTML
   end
-
-  #===================================================================================================================
-  # Change order listing to include time on order date # see spree_core-0.50.4\app\views\admin\orders\index.html.erb
-  replace :admin_orders_index_rows, :partial => 'admin/shared/orders_index_rows.html.erb'
 
   #===================================================================================================================
   # Add an admin-only field to the shipping_methods admin forms (see spree_core-0.50.4/app/views/admin/shipping_methods/_form.html.erb)

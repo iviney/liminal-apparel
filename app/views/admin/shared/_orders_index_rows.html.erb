@@ -2,6 +2,7 @@
 <%# See \lib\liminal_hooks.rb %>
 
 <%# Order date is formatted as d mmm yy m:hh am/pm in our time zone %>
+<%# Add order currency column. %>
 
 <td><%= (@show_only_completed ? order.completed_at : order.created_at).in_time_zone.strftime("%-d %b %y, %-I:%M%P") %></td>
 <td><%= link_to order.number, object_url(order) %></td>
@@ -10,3 +11,4 @@
 <td><%= link_to t("shipment_states.#{order.shipment_state}"), admin_order_shipments_path(order) if order.shipment_state %></td>
 <td><%= order.email %></td>
 <td><%= number_to_currency order.total %></td>
+<td><%= order.currency %></td>
