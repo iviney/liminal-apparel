@@ -30,7 +30,7 @@ class Admin::PayNowsController < Admin::BaseController
     else
       flash[:error] = "Couldn't save QuickPay"
     end
-    render 'new'
+    render 'new' if flash[:error] 
   end
 
   # This creates an order just for the purpose of taking a payment.  It has a single line item of a dummy product with SKU 00000 costing 0.01,
@@ -57,7 +57,7 @@ class Admin::PayNowsController < Admin::BaseController
       session[:order_id] = order.id
       redirect_to "#{order_path(order)}/checkout/paypal_payment?payment_method_id=#{payment_method.id}"
     else
-      nil # return nil if no SKU of 00000 found
+      flash[:error] = "Product 00000 not found" # if no SKU of 00000 found
     end
   end
 
