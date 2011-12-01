@@ -28,6 +28,6 @@ Order.class_eval do
 
   private
     def set_currency
-      self.currency = Site.active_currency
+      self.currency ||= Site.active_currency
     end
 end

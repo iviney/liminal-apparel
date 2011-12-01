@@ -1,6 +1,6 @@
 Spree::BaseController.class_eval do
   include ActiveCountryHelper
-  
+
   before_filter :set_currency
   
   private

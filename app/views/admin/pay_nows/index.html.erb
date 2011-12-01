@@ -1,0 +1,31 @@
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to "New QuickPay", new_object_url, :icon => 'add'  %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+<h1>QuickPays</h1>
+<table class="index">
+  <thead>
+    <tr>
+      <th><%= sort_link @search, :amount,   "Amount" %></th>
+      <th><%= sort_link @search, :currency, "Currency" %></th>
+      <th><%= sort_link @search, :payment_state, "State" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pay_nows.each do |pay_now|%>
+    <tr id="<%= dom_id pay_now %>">
+      <td><%=pay_now.amount %></td>
+      <td><%=pay_now.currency %></td>
+      <td><%=pay_now.payment_state %></td>
+      <td>
+      	<%= link_to_edit pay_now %> &nbsp;
+      	<%= link_to_delete pay_now %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

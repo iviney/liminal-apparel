@@ -8,6 +8,11 @@ LiminalApparel::Application.routes.draw do
 
   namespace :admin do
     resources :retailers
+    resources :pay_nows do
+      member do
+        get :paypal_confirm
+      end
+    end
   end
 
   # The priority is based upon order of creation:

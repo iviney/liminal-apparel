@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111121022333) do
+ActiveRecord::Schema.define(:version => 20111129080142) do
 
   create_table "additional_calculator_rates", :force => true do |t|
     t.integer  "calculator_id",                                                                :null => false
@@ -256,6 +256,15 @@ ActiveRecord::Schema.define(:version => 20111121022333) do
   end
 
   add_index "pages", ["slug"], :name => "index_pages_on_slug"
+
+  create_table "pay_nows", :force => true do |t|
+    t.integer  "user_id",                                                                         :null => false
+    t.decimal  "amount",                      :precision => 8, :scale => 2,                       :null => false
+    t.string   "currency",      :limit => 20,                               :default => "AUD",    :null => false
+    t.string   "payment_state", :limit => 20,                               :default => "unpaid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "payment_methods", :force => true do |t|
     t.string   "type"

@@ -58,4 +58,10 @@ HTML
   insert_after :admin_shipping_methods_index_rows do
     %(<td><%= shipping_method.admin_only ? "Yes" : "" %></td>)
   end
+
+  #===================================================================================================================
+  # Add a QuickPay item to admin menu
+  insert_after :admin_tabs do
+    %(<%= tab :pay_nows, :route => "new_admin_pay_now" %>)
+  end
 end
