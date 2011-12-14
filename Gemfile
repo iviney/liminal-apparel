@@ -22,6 +22,8 @@ gem "spree_paypal_express", :git => "git://github.com/spree/spree_paypal_express
 
 gem 'spree_additional_calculators'
 
+gem 'spree_xero', :git => 'git://github.com/iviney/spree-xero.git'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda'
