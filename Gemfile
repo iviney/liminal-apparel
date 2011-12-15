@@ -18,7 +18,7 @@ gem 'spree', '0.50.4'
 gem 'spree_simple_volume_pricing', :git => 'git://github.com/jviney/spree-simple-volume-pricing.git', :branch => 'master'
 
 # Adds support for the Paypal Express checkout.
-gem "spree_paypal_express", :git => "git://github.com/spree/spree_paypal_express.git"
+gem "spree_paypal_express", :git => "git://github.com/spree/spree_paypal_express.git", :ref => "4dadc4ad67d5"
 
 gem 'spree_additional_calculators'
 
