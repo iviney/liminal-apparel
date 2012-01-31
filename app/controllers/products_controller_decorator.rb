@@ -4,6 +4,9 @@ ProductsController.class_eval do
   before_filter :define_2d_option_matrix, :only => :show
 
   def define_2d_option_matrix
+
+    return if object.permalink != "freeset-t-shirt" # there are other T-shirts we want to treat differently
+    
     logger.debug "define_2d_option_matrix"
     variants = Spree::Config[:show_zero_stock_products] ?
       object.variants.active.select { |a| !a.option_values.empty? } :
