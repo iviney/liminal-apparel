@@ -5,7 +5,7 @@ ProductsController.class_eval do
 
   def define_2d_option_matrix
 
-    return if object.permalink != "freeset-t-shirt" # there are other T-shirts we want to treat differently
+    return if object.permalink != 'freeset-t-shirt' # there are other T-shirts we want to treat differently
     
     logger.debug "define_2d_option_matrix"
     variants = Spree::Config[:show_zero_stock_products] ?
