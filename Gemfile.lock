@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/iviney/spree-simple-volume-pricing.git
+  revision: 415feb2f00889510ad40818bca4f4e0a30cefdba
+  branch: master
+  specs:
+    spree_simple_volume_pricing (3.0.3)
+      render_inheritable (>= 1.0.0)
+      spree_core (>= 0.40.3)
+
+GIT
   remote: git://github.com/iviney/spree-xero.git
   revision: 527ce1da93cf24b75bb4fe38e484a7b7a963e143
   specs:
@@ -6,15 +15,6 @@ GIT
       builder (>= 2.1.2)
       spree_core (>= 0.50.4)
       xero_gateway (>= 2.0.13)
-
-GIT
-  remote: git://github.com/jviney/spree-simple-volume-pricing.git
-  revision: 415feb2f00889510ad40818bca4f4e0a30cefdba
-  branch: master
-  specs:
-    spree_simple_volume_pricing (3.0.3)
-      render_inheritable (>= 1.0.0)
-      spree_core (>= 0.40.3)
 
 GIT
   remote: git://github.com/spree/spree_paypal_express.git
