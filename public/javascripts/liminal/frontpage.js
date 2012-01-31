@@ -3,7 +3,7 @@
 // 2. The other images are made half-opaque.  This is done by setting them to a class of 'unselected' and the CSS makes those have an
 //    opacity value.
 
-var add_image_handlers = function() {
+var add_front_page_image_handlers = function() {
   $('#categories img').hover(
     function() {
       $('#categories img').addClass('unselected');
@@ -18,5 +18,5 @@ var add_image_handlers = function() {
 };
  
 jQuery(document).ready(function() {
-  add_image_handlers();
+  add_front_page_image_handlers();
 });
