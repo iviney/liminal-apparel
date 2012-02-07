@@ -7,7 +7,7 @@
         <table class="table-2-column">
             <% retailers.each do |retailer| %>
                 <tr><td>
-                  <% if retailer.url %>
+                  <% if retailer.url and retailer.url != "" %>
                     <a href="<%= retailer.url %>" target="_blank"><%= retailer.name %></a>
                   <% else %>
                     <%= retailer.name %>
