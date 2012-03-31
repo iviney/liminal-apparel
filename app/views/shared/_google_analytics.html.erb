@@ -5,7 +5,7 @@
 
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-29668836-1']); <%# TBD don't hardwire account number %>
-    _gaq.push(['_setDomainName', '<%= request.host %>']);
+    _gaq.push(['_setDomainName', '<%= request.host.gsub("www.","") %>']);
     _gaq.push(['_setAllowLinker', true]);
     _gaq.push(['_trackPageview']);
 
