@@ -2,9 +2,9 @@
 
 <% if Spree::Config[:allow_purchasing] %>
     <%= link_to small_image(product), product %>
-    <%= link_to raw(product.name + " <span class='price selling'>#{product_price(product)}" + (australia? ? "" : " + GST") + "</span>"), product, :class => 'info' %>
+    <%= link_to raw(product.name + " <span class='price selling'>#{product_price_incl_tax(product)}" + (australia? ? "" : " incl GST") + "</span>"), product, :class => 'info' %>
 <% else %>
     <%# if shop isn't open, make the links inactive %>
     <%= link_to small_image(product), "#" %>
-    <%= link_to raw(product.name + " <span class='price selling'>#{product_price(product)}" + (australia? ? "" : " + GST") + "</span>"), "#", :class => 'info' %>
+    <%= link_to raw(product.name + " <span class='price selling'>#{product_price_incl_tax(product)}" + (australia? ? "" : " incl GST") + "</span>"), "#", :class => 'info' %>
 <% end %>
