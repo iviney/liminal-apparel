@@ -97,16 +97,15 @@
                 </th>
                 <% @sc_matrix['sizes'].each do |s| -%>
                 <td>
-                    <% if @sc_matrix['variant_ids'][s.id.to_s + '_' + c.id.to_s] -%>
-                        <div class="cell">
-                            <p class="input_caption"><%= s.presentation %>
-                            </p>
+                    <div class="cell">
+                        <p class="input_caption"><%= s.presentation %>
+                        </p>
+                        <% if @sc_matrix['variant_ids'][s.id.to_s + '_' + c.id.to_s] -%>
                             <input type="text" size="4" maxlength="4" name="variants[<%= @sc_matrix['variant_ids'][s.id.to_s + '_' + c.id.to_s] %>]" />
-
-                        </div>
-                    <% else -%>
-                        <img src="/images/notavailable.jpg" alt="X" width="20" height="20"/> <%# TODO test %>
-                    <% end -%>
+                        <% else -%>
+                            <input type="text" size="4" maxlength="4" value="N/A" disabled="disabled" />
+                        <% end -%>
+                    </div>
                 </td>
                 <% end -%>
             </tr>

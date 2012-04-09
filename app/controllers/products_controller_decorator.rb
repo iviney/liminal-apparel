@@ -22,7 +22,7 @@ ProductsController.class_eval do
       if variant.option_values.detect{|a| a.option_type.presentation == 'Gender'}.presentation == gender then # limit to desired gender
         active_size = variant.option_values.select { |a| a.option_type.presentation == 'Size' }.first
         active_color = variant.option_values.select { |a| a.option_type.presentation == 'Colour' }.first
-        variant_ids[active_size.id.to_s + '_' + active_color.id.to_s] = variant.id
+        variant_ids[active_size.id.to_s + '_' + active_color.id.to_s] = variant.id unless !variant.available
         sizes << active_size
         colors << active_color
       end

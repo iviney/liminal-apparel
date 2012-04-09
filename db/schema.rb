@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111129080142) do
+ActiveRecord::Schema.define(:version => 20120409215929) do
 
   create_table "additional_calculator_rates", :force => true do |t|
     t.integer  "calculator_id",                                                                :null => false
@@ -366,6 +366,7 @@ ActiveRecord::Schema.define(:version => 20111129080142) do
     t.string   "meta_keywords"
     t.integer  "count_on_hand",                :default => 0,     :null => false
     t.boolean  "variants_use_master_discount", :default => false, :null => false
+    t.string   "xero_acct_code"
   end
 
   add_index "products", ["available_on"], :name => "index_products_on_available_on"
@@ -633,6 +634,7 @@ ActiveRecord::Schema.define(:version => 20111129080142) do
     t.integer  "position"
     t.string   "currency_prices"
     t.boolean  "progressive_volume_discount", :default => false, :null => false
+    t.boolean  "available",                   :default => true
   end
 
   add_index "variants", ["product_id"], :name => "index_variants_on_product_id"
@@ -646,6 +648,22 @@ ActiveRecord::Schema.define(:version => 20111129080142) do
   end
 
   add_index "volume_prices", ["variant_id", "starting_quantity"], :name => "index_volume_prices_on_variant_id_and_starting_quantity", :unique => true
+
+  create_table "xero_instances", :force => true do |t|
+    t.string   "name"
+    t.string   "consumer_key"
+    t.string   "consumer_secret"
+    t.string   "private_key_file_file_name"
+    t.string   "private_key_file_content_type"
+    t.integer  "private_key_file_file_size"
+    t.datetime "private_key_file_datetime"
+    t.string   "sale_dflt_acct_code"
+    t.string   "shipping_acct_code"
+    t.string   "adjustment_acct_code"
+    t.string   "payment_acct_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "zone_members", :force => true do |t|
     t.integer  "zone_id"
