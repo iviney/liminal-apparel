@@ -42,7 +42,7 @@ class Admin::PayNowsController < Admin::BaseController
     if prod = Variant.find(:first, :conditions => {:sku => "00000"})
       order = Order.new
       order.email = current_user.email
-      order.currency = "AUD" # TBD currency shouldn't be hardwired
+      order.currency = "NZD" # TBD currency shouldn't be hardwired
       order.state = "payment" # pretend we're at the payment stage of checkout
       order.save!
 
@@ -94,7 +94,7 @@ class Admin::PayNowsController < Admin::BaseController
       :req_confirm_shipping    => false,   # for security, might make an option later
       :user_action             => "commit",
 
-      :currency                => "AUD", # TBD should be entered as part of paynow
+      :currency                => "NZD", # TBD should be entered as part of paynow
       :header_image            => "https://app.churchoffice.org.nz#{Spree::Config[:logo]}",
 
       :email                   => pay_now.user.email,
