@@ -17,7 +17,7 @@ class Admin::PayNowsController < Admin::BaseController
   end
 
   def create
-    pay_now = PayNow.new(:amount => params[:pay_now][:amount], :user => current_user)
+    pay_now = PayNow.new(:amount => params[:pay_now][:amount], :user => current_user, :currency => "NZD")
     if pay_now.save
       # Submit to_paypal
       begin
